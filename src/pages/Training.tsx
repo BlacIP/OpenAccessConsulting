@@ -65,7 +65,7 @@ const Training = () => {
     {
       name: 'Sarah Johnson',
       role: 'Founder & CEO',
-      company: 'HRPro Consulting',
+      company: 'OPENACCESS CONSULTING',
       image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg',
       bio: 'Leading expert in HR transformation with 20+ years experience',
     },
@@ -79,7 +79,7 @@ const Training = () => {
     {
       name: 'Michael Chen',
       role: 'Senior HR Consultant',
-      company: 'HRPro Consulting',
+      company: 'OPENACCESS CONSULTING',
       image: 'https://images.pexels.com/photos/3760790/pexels-photo-3760790.jpeg',
       bio: 'Talent management specialist with Fortune 500 experience',
     },
