@@ -66,28 +66,28 @@ const Training = () => {
       name: 'Sarah Johnson',
       role: 'Founder & CEO',
       company: 'HRPro Consulting',
-      image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg',
+      image: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg',
       bio: 'Leading expert in HR transformation with 20+ years experience',
     },
     {
       name: 'Dr. Amanda Foster',
       role: 'Chief People Officer',
       company: 'TechCorp Industries',
-      image: 'https://images.pexels.com/photos/3756681/pexels-photo-3756681.jpeg',
+      image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg',
       bio: 'Renowned speaker on workplace psychology and employee wellness',
     },
     {
       name: 'Michael Chen',
       role: 'Senior HR Consultant',
       company: 'HRPro Consulting',
-      image: 'https://images.pexels.com/photos/3760790/pexels-photo-3760790.jpeg',
+      image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg',
       bio: 'Talent management specialist with Fortune 500 experience',
     },
     {
       name: 'Jennifer Martinez',
       role: 'CHRO',
       company: 'Global Dynamics',
-      image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg',
+      image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg',
       bio: 'Expert in organizational development and change management',
     },
   ];
@@ -149,7 +149,7 @@ const Training = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg"
+                src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg"
                 alt="Professional training session"
                 className="rounded-2xl shadow-2xl"
               />

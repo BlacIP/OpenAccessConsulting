@@ -29,25 +29,25 @@ const About = () => {
     {
       name: 'Sarah Johnson',
       role: 'Founder & CEO',
-      image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg',
+      image: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg',
       bio: 'With over 20 years of HR leadership experience, Sarah founded HRPro to help organizations build exceptional workplace cultures.',
     },
     {
       name: 'Michael Chen',
       role: 'Senior HR Consultant',
-      image: 'https://images.pexels.com/photos/3760790/pexels-photo-3760790.jpeg',
+      image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg',
       bio: 'Michael specializes in talent management and organizational development, bringing 15 years of Fortune 500 experience.',
     },
     {
       name: 'Emily Rodriguez',
       role: 'Training Director',
-      image: 'https://images.pexels.com/photos/3756681/pexels-photo-3756681.jpeg',
+      image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg',
       bio: 'Emily leads our training programs and has developed curricula for thousands of HR professionals worldwide.',
     },
     {
       name: 'David Thompson',
       role: 'Compliance Specialist',
-      image: 'https://images.pexels.com/photos/3760793/pexels-photo-3760793.jpeg',
+      image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg',
       bio: 'David ensures our clients stay compliant with ever-changing employment laws and regulations.',
     },
   ];
