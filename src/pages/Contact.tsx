@@ -38,7 +38,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: 'info@hrproconsulting.com',
+      details: 'info@openacessconsult.com',
       subtext: 'We respond within 24 hours',
     },
     {
