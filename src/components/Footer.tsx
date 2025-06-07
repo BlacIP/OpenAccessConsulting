@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="bg-blue-600 p-2 rounded-lg">
                 <Users className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold">HRPro Consulting</span>
+              <span className="text-xl font-bold">OPENACCESS CONSULTING</span>
             </div>
             <p className="text-gray-300 text-sm leading-6">
               Empowering organizations through strategic HR consulting and professional development training.
@@ -64,7 +64,7 @@ const Footer = () => {
             <div className="space-y-3 text-sm text-gray-300">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4" />
-                <span>info@hrproconsulting.com</span>
+                <span>info@openacessconsult.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4" />
@@ -79,7 +79,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2024 HRPro Consulting. All rights reserved.</p>
+          <p>&copy; 2024 OPENACCESS CONSULTING. All rights reserved.</p>
         </div>
       </div>
     </footer>

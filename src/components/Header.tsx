@@ -24,7 +24,7 @@ const Header = () => {
             <div className="bg-blue-600 p-2 rounded-lg group-hover:bg-blue-700 transition-colors">
               <Users className="h-6 w-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">HRPro Consulting</span>
+            <span className="text-xl font-bold text-gray-900">OPENACCESS CONSULTING</span>
           </Link>
 
           {/* Desktop Navigation */}
