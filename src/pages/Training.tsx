@@ -388,17 +388,17 @@ const Training = () => {
               <div>
                 <div className="text-2xl font-bold mb-2">Early Bird</div>
                 <div className="text-blue-200">Until Feb 15</div>
-                <div className="text-3xl font-bold">$249</div>
+                <div className="text-3xl font-bold">₦249</div>
               </div>
               <div>
                 <div className="text-2xl font-bold mb-2">Regular</div>
                 <div className="text-blue-200">Feb 16 - Mar 10</div>
-                <div className="text-3xl font-bold">$299</div>
+                <div className="text-3xl font-bold">₦299</div>
               </div>
               <div>
                 <div className="text-2xl font-bold mb-2">Late Registration</div>
                 <div className="text-blue-200">After Mar 10</div>
-                <div className="text-3xl font-bold">$349</div>
+                <div className="text-3xl font-bold">₦349</div>
               </div>
             </div>
           </div>
