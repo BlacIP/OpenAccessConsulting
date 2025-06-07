@@ -73,21 +73,23 @@ const Training = () => {
       name: 'Dr. Amanda Foster',
       role: 'Chief People Officer',
       company: 'TechCorp Industries',
-      image: 'https://images.pexels.com/photos/3756681/pexels-photo-3756681.jpeg',
+      image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg',
       bio: 'Renowned speaker on workplace psychology and employee wellness',
     },
     {
       name: 'Michael Chen',
       role: 'Senior HR Consultant',
+
       company: 'OPENACCESS CONSULTING',
       image: 'https://images.pexels.com/photos/3760790/pexels-photo-3760790.jpeg',
+
       bio: 'Talent management specialist with Fortune 500 experience',
     },
     {
       name: 'Jennifer Martinez',
       role: 'CHRO',
       company: 'Global Dynamics',
-      image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg',
+      image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg',
       bio: 'Expert in organizational development and change management',
     },
   ];
@@ -149,7 +151,7 @@ const Training = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg"
+                src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg"
                 alt="Professional training session"
                 className="rounded-2xl shadow-2xl"
               />
