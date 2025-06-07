@@ -133,12 +133,12 @@ const Training = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://registration.example.com/hr-training-2024"
+                  href="https://forms.gle/BcFQ6xgm26rvMYvG8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center group"
                 >
-                  Register Now - $299
+                  Register Now
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <button className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors inline-flex items-center justify-center">
@@ -401,7 +401,7 @@ const Training = () => {
             </div>
           </div>
           <a
-            href="https://registration.example.com/hr-training-2024"
+            href="https://forms.gle/BcFQ6xgm26rvMYvG8"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white text-blue-600 px-12 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center text-lg group"
