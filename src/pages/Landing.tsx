@@ -1,28 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Target, TrendingUp, Award, Calendar, CheckCircle } from 'lucide-react';
+import { ArrowRight, Users, Target, TrendingUp, Award, Calendar, CheckCircle, Globe, Shield, BookOpen } from 'lucide-react';
 
 const Landing = () => {
   const services = [
     {
-      icon: Target,
-      title: 'HR Strategy',
-      description: 'Develop comprehensive HR strategies aligned with your business objectives.',
-    },
-    {
       icon: Users,
-      title: 'Talent Management',
-      description: 'Attract, develop, and retain top talent through strategic talent management.',
+      title: 'Recruitment Services',
+      description: 'Comprehensive recruitment solutions across hospitality, manufacturing, healthcare, and more.',
     },
     {
-      icon: TrendingUp,
-      title: 'Performance Management',
-      description: 'Implement effective performance management systems and processes.',
+      icon: Shield,
+      title: 'Employee Verification',
+      description: 'Thorough background checks including KYC, credit checks, and employment verification.',
     },
     {
-      icon: Award,
+      icon: Globe,
+      title: 'Immigration Services',
+      description: 'Complete expatriate and immigration support for international business operations.',
+    },
+    {
+      icon: BookOpen,
       title: 'Training & Development',
-      description: 'Enhance your teams capabilities through customized training programs.',
+      description: 'Professional development programs in leadership, sales, customer service, and more.',
     },
   ];
 
@@ -36,18 +36,18 @@ const Landing = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden -mx-16">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+        <div className="relative max-w-7xl mx-auto px-16 py-24 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
                 Transform Your
-                <span className="block text-blue-300">HR Strategy</span>
+                <span className="block text-blue-300">Business Operations</span>
               </h1>
               <p className="text-xl text-blue-100 leading-relaxed">
-                Partner with industry experts to build a thriving workplace culture, 
-                optimize talent management, and drive organizational success.
+                Partner with industry experts for comprehensive professional services including 
+                HR solutions, immigration support, recruitment, training, and business consulting.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -86,8 +86,8 @@ const Landing = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-gray-50 -mx-16">
+        <div className="max-w-7xl mx-auto px-16">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
@@ -103,48 +103,46 @@ const Landing = () => {
 
       {/* Services Section */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Our Core Services
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive HR solutions tailored to your organization's unique needs and goals.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow group"
-              >
-                <div className="bg-blue-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                  <service.icon className="h-8 w-8 text-blue-600 group-hover:text-white transition-colors" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              to="/services"
-              className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center group"
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Our Core Services
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive professional services tailored to your organization's unique needs and goals.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow group"
             >
-              View All Services
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+              <div className="bg-blue-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                <service.icon className="h-8 w-8 text-blue-600 group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                {service.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-12">
+          <Link
+            to="/services"
+            className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center group"
+          >
+            View All Services
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </section>
 
       {/* Training Highlight */}
-      <section className="py-20 bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-blue-600 text-white -mx-16">
+        <div className="max-w-7xl mx-auto px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
@@ -156,19 +154,19 @@ const Landing = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                  Annual HR Professional Training
+                  Professional Training Programs
                 </h2>
                 <p className="text-xl text-blue-100 leading-relaxed mb-6">
-                  Join hundreds of HR professionals for our comprehensive annual training program. 
-                  Stay ahead of industry trends and earn professional development credits.
+                  Enhance your team's capabilities through our comprehensive training programs. 
+                  From leadership development to technical skills, we offer customized solutions.
                 </p>
               </div>
               <div className="space-y-4">
                 {[
-                  'Expert-led sessions on latest HR trends',
-                  'Networking opportunities with industry leaders',
-                  'Hands-on workshops and case studies',
-                  'Professional certification credits',
+                  'Leadership & Management Development',
+                  'Sales & Marketing Excellence',
+                  'Customer Service Training',
+                  'Professional Certification Programs',
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="h-6 w-6 text-blue-300 flex-shrink-0" />
@@ -189,14 +187,14 @@ const Landing = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gray-900 text-white -mx-16">
+        <div className="max-w-4xl mx-auto px-16 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Ready to Transform Your HR Strategy?
+            Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Let's discuss how we can help your organization achieve its HR goals 
-            and build a thriving workplace culture.
+            Let's discuss how we can help your organization achieve its goals 
+            and build sustainable growth through our comprehensive services.
           </p>
           <Link
             to="/contact"

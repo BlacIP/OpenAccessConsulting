@@ -19,7 +19,7 @@ const Gallery = () => {
       alt: 'Professional Team Meeting',
       category: 'Consulting',
       event: 'Strategic Planning Session',
-      description: 'Working with clients on HR strategy development'
+      description: 'Working with clients on business strategy development'
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ const Gallery = () => {
       alt: 'Conference Presentation',
       category: 'Speaking Events',
       event: '2023 Leadership Summit',
-      description: 'Keynote presentation on modern HR practices'
+      description: 'Keynote presentation on modern business practices'
     },
     {
       id: 4,
@@ -35,7 +35,7 @@ const Gallery = () => {
       alt: 'Workshop Participants',
       category: 'Training Sessions',
       event: 'Performance Management Workshop',
-      description: 'Hands-on training for HR professionals'
+      description: 'Hands-on training for business professionals'
     },
     {
       id: 5,
@@ -50,7 +50,7 @@ const Gallery = () => {
       src: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg',
       alt: 'Training Certificate Ceremony',
       category: 'Certifications',
-      event: 'HR Certification Program',
+      event: 'Professional Certification Program',
       description: 'Certificate presentation to program graduates'
     },
     {
@@ -58,15 +58,15 @@ const Gallery = () => {
       src: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg',
       alt: 'Panel Discussion',
       category: 'Speaking Events',
-      event: 'HR Innovation Panel',
-      description: 'Industry experts discussing future of HR'
+      event: 'Business Innovation Panel',
+      description: 'Industry experts discussing future of business'
     },
     {
       id: 8,
       src: 'https://images.pexels.com/photos/3184340/pexels-photo-3184340.jpeg',
       alt: 'Networking Event',
       category: 'Networking',
-      event: 'HR Professionals Meetup',
+      event: 'Business Professionals Meetup',
       description: 'Networking session during annual conference'
     },
     {
@@ -98,8 +98,8 @@ const Gallery = () => {
       src: 'https://images.pexels.com/photos/3184345/pexels-photo-3184345.jpeg',
       alt: 'Award Ceremony',
       category: 'Awards',
-      event: 'Excellence in HR Award',
-      description: 'Recognition ceremony for outstanding HR practices'
+      event: 'Excellence in Business Award',
+      description: 'Recognition ceremony for outstanding business practices'
     }
   ];
 
@@ -113,21 +113,21 @@ const Gallery = () => {
   const events = [
     {
       year: '2023',
-      title: 'Annual HR Professional Conference',
+      title: 'Annual Business Excellence Conference',
       attendees: '500+',
       location: 'Lagos, Nigeria',
       highlights: ['12 Expert Speakers', '8 Workshop Sessions', 'Networking Dinner', 'Certificate Awards']
     },
     {
       year: '2022',
-      title: 'HR Innovation Summit',
+      title: 'Business Innovation Summit',
       attendees: '350+',
       location: 'Abuja, Nigeria',
-      highlights: ['Technology in HR', 'Remote Work Strategies', 'Panel Discussions', 'Best Practices Awards']
+      highlights: ['Technology in Business', 'Remote Work Strategies', 'Panel Discussions', 'Best Practices Awards']
     },
     {
       year: '2021',
-      title: 'Virtual HR Excellence Training',
+      title: 'Virtual Professional Excellence Training',
       attendees: '600+',
       location: 'Online Event',
       highlights: ['Global Speakers', 'Interactive Workshops', 'Digital Networking', 'Online Certifications']
@@ -137,21 +137,21 @@ const Gallery = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white py-20 -mx-16">
+        <div className="max-w-7xl mx-auto px-16 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">
             Event Gallery
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Explore moments from our training sessions, conferences, and consulting engagements. 
-            See the impact we're making in the HR community.
+            See the impact we're making in the business community.
           </p>
         </div>
       </section>
 
       {/* Event Highlights */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gray-50 -mx-16">
+        <div className="max-w-7xl mx-auto px-16">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Recent Events
@@ -198,62 +198,60 @@ const Gallery = () => {
 
       {/* Gallery Section */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Photo Gallery
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Browse through our collection of memorable moments
-            </p>
-            
-            {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-6 py-2 rounded-full font-medium transition-colors ${
-                    activeCategory === category
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Image Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredImages.map((image) => (
-              <div
-                key={image.id}
-                className="group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow"
-                onClick={() => setSelectedImage(image.src)}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Photo Gallery
+          </h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Browse through our collection of memorable moments
+          </p>
+          
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-6 py-2 rounded-full font-medium transition-colors ${
+                  activeCategory === category
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}
               >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-4 bg-white">
-                  <div className="bg-blue-100 text-blue-600 px-2 py-1 rounded text-xs font-medium w-fit mb-2">
-                    {image.category}
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-1 text-sm">
-                    {image.event}
-                  </h3>
-                  <p className="text-gray-600 text-xs">
-                    {image.description}
-                  </p>
-                </div>
-              </div>
+                {category}
+              </button>
             ))}
           </div>
+        </div>
+
+        {/* Image Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredImages.map((image) => (
+            <div
+              key={image.id}
+              className="group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+              onClick={() => setSelectedImage(image.src)}
+            >
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-4 bg-white">
+                <div className="bg-blue-100 text-blue-600 px-2 py-1 rounded text-xs font-medium w-fit mb-2">
+                  {image.category}
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-1 text-sm">
+                  {image.event}
+                </h3>
+                <p className="text-gray-600 text-xs">
+                  {image.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -277,8 +275,8 @@ const Gallery = () => {
       )}
 
       {/* Stats Section */}
-      <section className="py-20 bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-blue-600 text-white -mx-16">
+        <div className="max-w-7xl mx-auto px-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               Our Impact in Numbers
