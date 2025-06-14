@@ -58,10 +58,10 @@ const Landing = () => {
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
-                  to="/training"
+                  to="/services"
                   className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors inline-flex items-center justify-center"
                 >
-                  View Training Programs
+                  View Our Services
                 </Link>
               </div>
             </div>
@@ -130,6 +130,15 @@ const Landing = () => {
               </div>
             ))}
           </div>
+          <div className="text-center mt-12">
+            <Link
+              to="/services"
+              className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center group"
+            >
+              View All Services
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -168,7 +177,7 @@ const Landing = () => {
                 ))}
               </div>
               <Link
-                to="/training"
+                to="/services"
                 className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center group"
               >
                 Learn More & Register

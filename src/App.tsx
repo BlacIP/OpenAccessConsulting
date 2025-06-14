@@ -5,19 +5,21 @@ import Footer from './components/Footer';
 import Landing from './pages/Landing';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Training from './pages/Training';
+import Services from './pages/Services';
+import Gallery from './pages/Gallery';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-white">
         <Header />
-        <main>
+        <main className="mx-8">
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/training" element={<Training />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Routes>
         </main>
         <Footer />
