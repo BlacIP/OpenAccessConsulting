@@ -132,7 +132,7 @@ const Landing = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Our Core Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-l text-gray-600 max-w-3xl mx-auto">
             Comprehensive professional services tailored to your organization's unique needs and goals.
           </p>
         </div>
