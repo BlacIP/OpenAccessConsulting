@@ -58,7 +58,7 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white py-20 -mx-22">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white ">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-10 lg:px-28 py-20 lg:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
