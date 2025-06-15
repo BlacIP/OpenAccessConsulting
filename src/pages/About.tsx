@@ -193,7 +193,7 @@ const About = () => {
 
       {/* Values Section - Our 3E Model */}
       <section className="py-20 bg-gray-50 -mx-22">
-        <div className="max-w-7xl mx-auto px-22">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28 py-20 lg:py-12">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Our Core Values
