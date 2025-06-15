@@ -59,7 +59,7 @@ const About = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white py-20 -mx-22">
-        <div className="max-w-7xl mx-auto px-22">
+        <div className="max-w-7xl mx-auto px-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
