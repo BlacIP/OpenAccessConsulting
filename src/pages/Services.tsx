@@ -215,7 +215,7 @@ const Services = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-20 -mx-22">
-        <div className="max-w-7xl mx-auto px-28">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="text-center">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               Our Services
@@ -229,7 +229,7 @@ const Services = () => {
       </section>
 
       {/* Core Services */}
-      <section className="py-20 px-28">
+      <section className="py-20 px-22">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Our Core Services
@@ -322,7 +322,7 @@ const Services = () => {
 
       {/* Detailed Service Sections */}
       <section className="py-20 bg-gray-50 -mx-22">
-        <div className="max-w-7xl mx-auto px-28">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Human Resource Services */}
             <div className="bg-white p-8 rounded-xl shadow-lg">
@@ -398,7 +398,7 @@ const Services = () => {
 
       {/* Process Section */}
       <section className="py-20 bg-gray-50 -mx-22">
-        <div className="max-w-7xl mx-auto px-28">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Our Service Process
@@ -448,7 +448,7 @@ const Services = () => {
 
       {/* Annual HR Training Section */}
       <section className="py-20 bg-blue-600 text-white -mx-22">
-        <div className="max-w-7xl mx-auto px-28">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               Annual HR Professional Training
@@ -534,7 +534,7 @@ const Services = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-gray-900 text-white -mx-22">
-        <div className="max-w-4xl mx-auto px-28 text-center">
+        <div className="max-w-4xl mx-auto px-22 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
             Ready to Transform Your Business?
           </h2>
