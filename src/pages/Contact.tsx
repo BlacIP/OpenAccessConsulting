@@ -73,7 +73,7 @@ const Contact = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-gray-900 text-white py-20 -mx-22">
-        <div className="max-w-7xl mx-auto px-22 text-center">
+        <div className="max-w-7xl mx-auto px-28 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">
             Get In Touch
           </h1>
