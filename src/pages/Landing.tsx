@@ -166,7 +166,7 @@ const Landing = () => {
       </section>
 
       {/* Training Highlight */}
-      <section className="py-20 lg:py-8 bg-blue-600 text-white -mx-22">
+      <section className="py-20 lg:py-10 bg-blue-600 text-white -mx-22">
         <div className=" px-4 sm:px-10 lg:px-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
