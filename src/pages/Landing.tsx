@@ -136,7 +136,7 @@ const Landing = () => {
             Comprehensive professional services tailored to your organization's unique needs and goals.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((service, index) => (
             <div
               key={index}
