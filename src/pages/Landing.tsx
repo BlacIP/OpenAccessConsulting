@@ -109,8 +109,8 @@ const Landing = () => {
       <section className="py-6 bg-gray-50 -mx-22">
         <div className="max-w-7xl mx-auto px-28">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Trusted Clients</h2>
-            <p className="text-xl text-gray-600">Partnering with leading organizations across various industries</p>
+            <h2 className="text-1xl font-bold text-gray-900 mb-4">Our Trusted Clients</h2>
+            <p className="text-s text-gray-600">Partnering with leading organizations across various industries</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
             {clientLogos.map((client, index) => (
