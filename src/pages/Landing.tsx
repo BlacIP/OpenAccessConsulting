@@ -112,7 +112,7 @@ const Landing = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb">Our Trusted Clients</h2>
             <p className="text-s text-gray-600">Partnering with leading organizations across various industries</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-center">
             {clientLogos.map((client, index) => (
               <div key={index} className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
                 <img
@@ -128,7 +128,7 @@ const Landing = () => {
 
       {/* Services Section */}
       <section className="py-16 px-4 sm:px-10 lg:px-28">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Our Core Services
           </h2>
