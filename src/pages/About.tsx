@@ -119,7 +119,7 @@ const About = () => {
 
       {/* Vision Section */}
       <section className="py-20 bg-gray-50 -mx-22">
-        <div className="max-w-7xl mx-auto px-22">
+        <div className="max-w-7xl mx-auto px-28">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Vision</h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
