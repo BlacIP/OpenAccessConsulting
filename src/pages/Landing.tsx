@@ -195,7 +195,7 @@ const Landing = () => {
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="h-6 w-6 text-blue-300 flex-shrink-0" />
-                    <span className="text-blue-100">{benefit}</span>
+                    <span className="text-blue-100 text-sm">{benefit}</span>
                   </div>
                 ))}
               </div>
