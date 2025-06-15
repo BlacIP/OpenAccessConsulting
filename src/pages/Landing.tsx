@@ -167,7 +167,7 @@ const Landing = () => {
 
       {/* Training Highlight */}
       <section className="py-20 bg-blue-600 text-white -mx-22">
-        <div className="max-w-7xl mx-auto px-28">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
@@ -213,7 +213,7 @@ const Landing = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-gray-900 text-white -mx-22">
-        <div className="max-w-4xl mx-auto px-28 text-center">
+        <div className="max-w-4xl mx-auto px-22 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
             Ready to Transform Your Business?
           </h2>
