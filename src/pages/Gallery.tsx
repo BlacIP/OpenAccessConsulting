@@ -138,7 +138,7 @@ const Gallery = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white py-20 -mx-22">
-        <div className="max-w-7xl mx-auto px-22 text-center">
+        <div className="max-w-7xl mx-auto px-28 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">
             Event Gallery
           </h1>
