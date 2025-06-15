@@ -58,7 +58,7 @@ const Landing = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden -mx-22">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-28 py-24 lg:py-32">
+        <div className="relative max-w-7xl mx-auto px-22 py-24 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
@@ -107,7 +107,7 @@ const Landing = () => {
 
       {/* Trusted Clients Section */}
       <section className="py-6 bg-gray-50 -mx-22">
-        <div className="max-w-7xl mx-auto px-28">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="text-center mb-2">
             <h2 className="text-2xl font-bold text-gray-900 mb">Our Trusted Clients</h2>
             <p className="text-s text-gray-600">Partnering with leading organizations across various industries</p>
@@ -127,7 +127,7 @@ const Landing = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-28">
+      <section className="py-20 px-22">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Our Core Services
