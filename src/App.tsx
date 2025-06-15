@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-white">
         <Header />
-        <main className="2">
+        <main className="px-2">
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/about" element={<About />} />
