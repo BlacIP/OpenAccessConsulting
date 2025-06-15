@@ -276,7 +276,7 @@ const Gallery = () => {
 
       {/* Stats Section */}
       <section className="py-20 bg-blue-600 text-white -mx-22">
-        <div className="max-w-7xl mx-auto px-22">
+        <div className="max-w-7xl mx-auto px-28">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               Our Impact in Numbers
