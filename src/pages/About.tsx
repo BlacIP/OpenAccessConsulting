@@ -66,7 +66,7 @@ const About = () => {
                 About <br /> 
                 OPENACCESS CONSULTING
               </h1>
-              <p className="text-l text-gray-300 leading-relaxed">
+              <p className="text-md text-gray-300 leading-relaxed">
                 Open Access is a professional services firm dedicated to delivering
                 strategic solutions in human capital development, expatriate and
                 immigration services, recruitment, background check services, value-
