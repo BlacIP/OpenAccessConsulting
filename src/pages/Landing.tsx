@@ -148,7 +148,7 @@ const Landing = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 {service.title}
               </h3>
-              <p className="text-gray-600 text-s leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 {service.description}
               </p>
             </div>
