@@ -26,19 +26,39 @@ const Landing = () => {
     },
   ];
 
-  const stats = [
-    { number: '500+', label: 'Clients Served' },
-    { number: '15+', label: 'Years Experience' },
-    { number: '98%', label: 'Client Satisfaction' },
-    { number: '50+', label: 'Training Programs' },
+  const clientLogos = [
+    {
+      name: 'Karflex Fisheries Limited',
+      logo: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg',
+    },
+    {
+      name: 'SoftHealth',
+      logo: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg',
+    },
+    {
+      name: 'MoneyTronics Microfinance Bank',
+      logo: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg',
+    },
+    {
+      name: 'Infinity Microfinance Bank',
+      logo: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg',
+    },
+    {
+      name: 'Lyceum College',
+      logo: 'https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg',
+    },
+    {
+      name: 'Imperial Homes',
+      logo: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg',
+    },
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden -mx-16">
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden -mx-22">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-16 py-24 lg:py-32">
+        <div className="relative max-w-7xl mx-auto px-22 py-24 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
@@ -85,16 +105,21 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-50 -mx-16">
-        <div className="max-w-7xl mx-auto px-16">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-blue-600 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+      {/* Trusted Clients Section */}
+      <section className="py-16 bg-gray-50 -mx-22">
+        <div className="max-w-7xl mx-auto px-22">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Trusted Clients</h2>
+            <p className="text-xl text-gray-600">Partnering with leading organizations across various industries</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+            {clientLogos.map((client, index) => (
+              <div key={index} className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="max-h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
               </div>
             ))}
           </div>
@@ -141,8 +166,8 @@ const Landing = () => {
       </section>
 
       {/* Training Highlight */}
-      <section className="py-20 bg-blue-600 text-white -mx-16">
-        <div className="max-w-7xl mx-auto px-16">
+      <section className="py-20 bg-blue-600 text-white -mx-22">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
@@ -187,8 +212,8 @@ const Landing = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white -mx-16">
-        <div className="max-w-4xl mx-auto px-16 text-center">
+      <section className="py-20 bg-gray-900 text-white -mx-22">
+        <div className="max-w-4xl mx-auto px-22 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
             Ready to Transform Your Business?
           </h2>

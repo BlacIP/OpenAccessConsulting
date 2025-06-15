@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Target, 
@@ -21,10 +21,13 @@ import {
   Globe,
   FileText,
   Phone,
-  Truck
+  Truck,
+  X
 } from 'lucide-react';
 
 const Services = () => {
+  const [selectedService, setSelectedService] = useState<any>(null);
+
   const coreServices = [
     {
       icon: Users,
@@ -211,8 +214,8 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-20 -mx-16">
-        <div className="max-w-7xl mx-auto px-16">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-20 -mx-22">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="text-center">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               Our Services
@@ -240,7 +243,7 @@ const Services = () => {
           {coreServices.map((service, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow group border border-gray-100"
+              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow group border border-gray-100 h-96 flex flex-col"
             >
               <div className="bg-blue-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
                 <service.icon className="h-8 w-8 text-blue-600 group-hover:text-white transition-colors" />
@@ -248,7 +251,7 @@ const Services = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 {service.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 leading-relaxed mb-6 flex-grow">
                 {service.description}
               </p>
               <div className="space-y-2">
@@ -259,9 +262,12 @@ const Services = () => {
                   </div>
                 ))}
                 {service.categories.length > 4 && (
-                  <p className="text-blue-600 text-sm font-medium">
+                  <button
+                    onClick={() => setSelectedService(service)}
+                    className="text-blue-600 text-sm font-medium hover:text-blue-700 transition-colors cursor-pointer"
+                  >
                     +{service.categories.length - 4} more services
-                  </p>
+                  </button>
                 )}
               </div>
             </div>
@@ -269,9 +275,54 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Service Modal */}
+      {selectedService && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <div className="p-8">
+              <div className="flex justify-between items-start mb-6">
+                <div className="flex items-center space-x-4">
+                  <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center">
+                    <selectedService.icon className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">{selectedService.title}</h3>
+                    <p className="text-gray-600">{selectedService.description}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setSelectedService(null)}
+                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+              <div className="space-y-3">
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">All Services Include:</h4>
+                {selectedService.categories.map((category: string, index: number) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-600">{category}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <Link
+                  to="/contact"
+                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center group"
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Detailed Service Sections */}
-      <section className="py-20 bg-gray-50 -mx-16">
-        <div className="max-w-7xl mx-auto px-16">
+      <section className="py-20 bg-gray-50 -mx-22">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Human Resource Services */}
             <div className="bg-white p-8 rounded-xl shadow-lg">
@@ -346,8 +397,8 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-gray-50 -mx-16">
-        <div className="max-w-7xl mx-auto px-16">
+      <section className="py-20 bg-gray-50 -mx-22">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Our Service Process
@@ -396,8 +447,8 @@ const Services = () => {
       </section>
 
       {/* Annual HR Training Section */}
-      <section className="py-20 bg-blue-600 text-white -mx-16">
-        <div className="max-w-7xl mx-auto px-16">
+      <section className="py-20 bg-blue-600 text-white -mx-22">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               Annual HR Professional Training
@@ -482,8 +533,8 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white -mx-16">
-        <div className="max-w-4xl mx-auto px-16 text-center">
+      <section className="py-20 bg-gray-900 text-white -mx-22">
+        <div className="max-w-4xl mx-auto px-22 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
             Ready to Transform Your Business?
           </h2>

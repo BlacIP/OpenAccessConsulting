@@ -72,8 +72,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-gray-900 text-white py-20 -mx-16">
-        <div className="max-w-7xl mx-auto px-16 text-center">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-gray-900 text-white py-20 -mx-22">
+        <div className="max-w-7xl mx-auto px-22 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">
             Get In Touch
           </h1>
@@ -288,8 +288,8 @@ const Contact = () => {
       </section>
 
       {/* Map/Location Section */}
-      <section className="py-20 bg-gray-50 -mx-16">
-        <div className="max-w-7xl mx-auto px-16">
+      <section className="py-20 bg-gray-50 -mx-22">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Visit Our Office

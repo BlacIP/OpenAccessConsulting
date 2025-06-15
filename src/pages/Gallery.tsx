@@ -137,8 +137,8 @@ const Gallery = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white py-20 -mx-16">
-        <div className="max-w-7xl mx-auto px-16 text-center">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white py-20 -mx-22">
+        <div className="max-w-7xl mx-auto px-22 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">
             Event Gallery
           </h1>
@@ -150,8 +150,8 @@ const Gallery = () => {
       </section>
 
       {/* Event Highlights */}
-      <section className="py-20 bg-gray-50 -mx-16">
-        <div className="max-w-7xl mx-auto px-16">
+      <section className="py-20 bg-gray-50 -mx-22">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Recent Events
@@ -275,8 +275,8 @@ const Gallery = () => {
       )}
 
       {/* Stats Section */}
-      <section className="py-20 bg-blue-600 text-white -mx-16">
-        <div className="max-w-7xl mx-auto px-16">
+      <section className="py-20 bg-blue-600 text-white -mx-22">
+        <div className="max-w-7xl mx-auto px-22">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               Our Impact in Numbers
