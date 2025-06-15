@@ -181,7 +181,7 @@ const Landing = () => {
                 <h2 className="text-3xl lg:text-4xl font-bold mb-6">
                   Professional Training Programs
                 </h2>
-                <p className="text-l text-blue-100 leading-relaxed mb-6">
+                <p className="text-md text-blue-100 leading-relaxed mb-6">
                   Enhance your team's capabilities through our comprehensive training programs. 
                   From leadership development to technical skills, we offer customized solutions.
                 </p>
