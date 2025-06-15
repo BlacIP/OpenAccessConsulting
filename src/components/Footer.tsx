@@ -4,7 +4,7 @@ import { Users, Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-10 lg:px-28 lg:py-8">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-10 lg:px-28 lg:py-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
