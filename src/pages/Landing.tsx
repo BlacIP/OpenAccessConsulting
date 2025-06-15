@@ -145,7 +145,7 @@ const Landing = () => {
               <div className="bg-blue-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
                 <service.icon className="h-8 w-8 text-blue-600 group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-l font-semibold text-gray-900 mb-4">
                 {service.title}
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
