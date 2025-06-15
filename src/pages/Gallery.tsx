@@ -240,7 +240,7 @@ const Gallery = () => {
                 />
               </div>
               <div className="p-4 bg-white">
-                <div className="bg-blue-100 text-blue-600 px-2 py-1 rounded text-xs font-medium w-fit mb-2">
+                <div className="bg-blue-100 text-blue-600 px-28 py-1 rounded text-xs font-medium w-fit mb-2">
                   {image.category}
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-1 text-sm">
