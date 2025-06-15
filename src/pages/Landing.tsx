@@ -186,7 +186,7 @@ const Landing = () => {
                   From leadership development to technical skills, we offer customized solutions.
                 </p>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-4">
                 {[
                   'Leadership & Management Development',
                   'Sales & Marketing Excellence',
