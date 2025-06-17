@@ -243,7 +243,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-blue-600 text-white rounded-xl p-8">
+            {/* <div className="bg-blue-600 text-white rounded-xl p-8">
               <h3 className="text-xl font-bold mb-4">
                 Schedule a Consultation
               </h3>
@@ -254,9 +254,9 @@ const Contact = () => {
               <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
                 Book Now
               </button>
-            </div>
+            </div> */}
 
-            <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
+            {/* <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 FAQ Quick Links
               </h3>
@@ -282,7 +282,7 @@ const Contact = () => {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
