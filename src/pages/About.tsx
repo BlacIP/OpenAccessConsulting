@@ -58,8 +58,8 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white ">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-10 lg:px-28 py-20 lg:py-12">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white py-20 -mx-22">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
@@ -85,7 +85,7 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20">
+      <section className="py-20 px-4 sm:px-10 lg:px-28">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Mission</h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
@@ -119,7 +119,7 @@ const About = () => {
 
       {/* Vision Section */}
       <section className="py-20 bg-gray-50 -mx-22">
-        <div className="max-w-7xl mx-auto px-22">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Vision</h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
@@ -145,7 +145,7 @@ const About = () => {
       </section>
 
       {/* About Us Extended */}
-      <section className="py-20">
+      <section className="py-20 px-4 sm:px-10 lg:px-28">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Who We Are
@@ -192,7 +192,7 @@ const About = () => {
       </section>
 
       {/* Values Section - Our 3E Model */}
-      <section className="bg-gray-50 ">
+      <section className="py-20 bg-gray-50 -mx-22">
         <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -228,7 +228,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20">
+      <section className="py-20 px-4 sm:px-10 lg:px-28">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Meet Our Expert Team
