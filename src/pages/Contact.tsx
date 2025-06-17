@@ -243,46 +243,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* <div className="bg-blue-600 text-white rounded-xl p-8">
-              <h3 className="text-xl font-bold mb-4">
-                Schedule a Consultation
-              </h3>
-              <p className="text-blue-100 mb-6">
-                Ready to get started? Book a free 30-minute consultation 
-                to discuss your business needs and explore how we can help.
-              </p>
-              <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                Book Now
-              </button>
-            </div> */}
-
-            {/* <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                FAQ Quick Links
-              </h3>
-              <ul className="space-y-3">
-                <li>
-                  <a href="#" className="text-blue-600 hover:text-blue-700 transition-colors">
-                    What services do you offer?
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-blue-600 hover:text-blue-700 transition-colors">
-                    How much do consultations cost?
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-blue-600 hover:text-blue-700 transition-colors">
-                    Do you work with international clients?
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-blue-600 hover:text-blue-700 transition-colors">
-                    What industries do you serve?
-                  </a>
-                </li>
-              </ul>
-            </div> */}
+            
           </div>
         </div>
       </section>
@@ -294,19 +255,20 @@ const Contact = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Visit Our Office
             </h2>
-            <p className="text-xl text-gray-600">
-              Located in Lagos, Nigeria
-            </p>
+             <p className="text-sm text-gray-400 mt-2">
+                  7 Asiata Solarin Crescent Off Kudirat Abiola Way, Olusosun Bus Stop Oregun, Lagos.
+                </p>
           </div>
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="aspect-video bg-gray-200 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500">Interactive Map Would Go Here</p>
-                <p className="text-sm text-gray-400 mt-2">
-                  7 Asiata Solarin Crescent Off Kudirat Abiola Way, Olusosun Bus Stop Oregun, Lagos.
-                </p>
-              </div>
+              <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96800.76508513864!2d3.3946093528314774!3d6.5251174813143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b937a75c894ed%3A0x604cbad4c7f4679e!2sOpen%20Access%20Consulting%20Limited!5e0!3m2!1sen!2sng!4v1750202053306!5m2!1sen!2sng" 
+                  width="600" 
+                  height="450" 
+                  className="border-0 w-full h-full"
+                  title="Open Access Consulting Limited Office Location"
+                  loading="lazy"
+                />
             </div>
           </div>
         </div>
