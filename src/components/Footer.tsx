@@ -64,15 +64,18 @@ const Footer = () => {
             <div className="space-y-3 text-sm text-gray-300">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4" />
-                <span>info@openacessconsult.com</span>
+                <div>
+                  <div>info@openaccessconsult.com</div>
+                  <div>openaccessconsulting@gmail.com</div>
+                </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>08066861023</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4" />
-                <span>123 Business Ave, Suite 100<br />New York, NY 10001</span>
+                <span>7 Asiata Solarin Crescent Off Kudirat Abiola Way,<br />Olusosun Bus Stop Oregun, Lagos.</span>
               </div>
             </div>
           </div>

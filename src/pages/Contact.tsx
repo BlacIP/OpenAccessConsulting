@@ -32,26 +32,26 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: '+1 (555) 123-4567',
-      subtext: 'Mon-Fri 9:00 AM - 6:00 PM EST',
+      details: '08066861023',
+      subtext: 'Mon-Fri 9:00 AM - 6:00 PM',
     },
     {
       icon: Mail,
       title: 'Email',
-      details: 'info@openacessconsult.com',
-      subtext: 'We respond within 24 hours',
+      details: 'info@openaccessconsult.com',
+      subtext: 'openaccessconsulting@gmail.com',
     },
     {
       icon: MapPin,
       title: 'Office',
-      details: '123 Business Ave, Suite 100',
-      subtext: 'New York, NY 10001',
+      details: '7 Asiata Solarin Crescent Off Kudirat Abiola Way',
+      subtext: 'Olusosun Bus Stop Oregun, Lagos.',
     },
     {
       icon: Clock,
       title: 'Business Hours',
       details: 'Monday - Friday',
-      subtext: '9:00 AM - 6:00 PM EST',
+      subtext: '9:00 AM - 6:00 PM',
     },
   ];
 
@@ -73,7 +73,7 @@ const Contact = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-gray-900 text-white py-20 -mx-22">
-        <div className="max-w-7xl mx-auto px-28 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">
             Get In Touch
           </h1>
@@ -85,7 +85,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20">
+      <section className="py-20 px-4 sm:px-10 lg:px-28">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Form */}
           <div className="lg:col-span-2">
@@ -153,7 +153,7 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="08066861023"
                     />
                   </div>
                 </div>
@@ -289,13 +289,13 @@ const Contact = () => {
 
       {/* Map/Location Section */}
       <section className="py-20 bg-gray-50 -mx-22">
-        <div className="max-w-7xl mx-auto px-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Visit Our Office
             </h2>
             <p className="text-xl text-gray-600">
-              Located in the heart of New York's business district
+              Located in Lagos, Nigeria
             </p>
           </div>
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
@@ -304,7 +304,7 @@ const Contact = () => {
                 <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
                 <p className="text-gray-500">Interactive Map Would Go Here</p>
                 <p className="text-sm text-gray-400 mt-2">
-                  123 Business Ave, Suite 100, New York, NY 10001
+                  7 Asiata Solarin Crescent Off Kudirat Abiola Way, Olusosun Bus Stop Oregun, Lagos.
                 </p>
               </div>
             </div>

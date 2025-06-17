@@ -119,47 +119,74 @@ const Services = () => {
         'Research Outsourcing',
         'Business Management'
       ]
+    },
+    {
+      icon: Users,
+      title: 'Human Resource Services',
+      description: 'Complete HR solutions to manage and optimize your human capital.',
+      categories: [
+        'Employee handbook',
+        'Absence management',
+        'Performance management',
+        'Training',
+        'Human resource need assessment',
+        'Health and safety',
+        'Career management',
+        'Recruitment',
+        'Policies and procedure development',
+        'HR compliance Audit',
+        'HR management',
+        'Payroll management',
+        'Employee relation support'
+      ]
+    },
+    {
+      icon: TrendingUp,
+      title: 'Business Management',
+      description: 'Strategic business management services to drive growth and efficiency.',
+      categories: [
+        'Strategic planning',
+        'Development of vision and mission',
+        'Financial management',
+        'Leadership and management development',
+        'Sales increase',
+        'Business restructuring',
+        'Cost reduction',
+        'Business set up support',
+        'Competitors analysis'
+      ]
+    },
+    {
+      icon: Target,
+      title: 'Organisation & Process Improvement',
+      description: 'Optimize your organizational processes across all business areas.',
+      categories: [
+        'Warehouse',
+        'Accounting',
+        'Human resource',
+        'Production',
+        'Cash flow',
+        'Vendor management',
+        'Hotel management',
+        'Payment and Receivable',
+        'Education service delivery'
+      ]
+    },
+    {
+      icon: Search,
+      title: 'Research Services',
+      description: 'Data and insights to support your business and marketing strategies.',
+      categories: [
+        'Market opportunity identification',
+        'Customer targeting research',
+        'Product and service design research',
+        'Competitor analysis',
+        'Marketing strategy development',
+        'Pricing research',
+        'Promotional strategy research',
+        'Business intelligence'
+      ]
     }
-  ];
-
-  const hrServices = [
-    'Employee handbook',
-    'Absence management',
-    'Performance management',
-    'Training',
-    'Human resource need assessment',
-    'Health and safety',
-    'Career management',
-    'Recruitment',
-    'Policies and procedure development',
-    'HR compliance Audit',
-    'HR management',
-    'Payroll management',
-    'Employee relation support'
-  ];
-
-  const businessManagementServices = [
-    'Strategic planning',
-    'Development of vision and mission',
-    'Financial management',
-    'Leadership and management development',
-    'Sales increase',
-    'Business restructuring',
-    'Cost reduction',
-    'Business set up support',
-    'Competitors analysis'
-  ];
-
-  const processImprovementAreas = [
-    'Warehouse',
-    'Accounting',
-    'Human resource',
-    'Production',
-    'Cash flow',
-    'Vendor management',
-    'Hotel management',
-    'Payment and Receivable',
-    'Education service delivery'
   ];
 
   const trainingHighlights = [
@@ -215,7 +242,7 @@ const Services = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-20 -mx-22">
-        <div className="max-w-7xl mx-auto px-22">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
           <div className="text-center">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               Our Services
@@ -229,7 +256,7 @@ const Services = () => {
       </section>
 
       {/* Core Services */}
-      <section className="py-20 px-22">
+      <section className="py-20 px-4 sm:px-10 lg:px-28">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Our Core Services
@@ -320,85 +347,9 @@ const Services = () => {
         </div>
       )}
 
-      {/* Detailed Service Sections */}
-      <section className="py-20 bg-gray-50 -mx-22">
-        <div className="max-w-7xl mx-auto px-22">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Human Resource Services */}
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <Users className="h-6 w-6 text-blue-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Human Resource Services</h3>
-              <ul className="space-y-3">
-                {hrServices.map((service, index) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="h-4 w-4 text-blue-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-600 text-sm">{service}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Business Management */}
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <TrendingUp className="h-6 w-6 text-green-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Business Management</h3>
-              <ul className="space-y-3">
-                {businessManagementServices.map((service, index) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-600 text-sm">{service}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Process Improvement */}
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <div className="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <Target className="h-6 w-6 text-purple-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Organisation & Process Improvement</h3>
-              <p className="text-gray-600 mb-4">Process improvement in areas such as:</p>
-              <ul className="space-y-3">
-                {processImprovementAreas.map((area, index) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="h-4 w-4 text-purple-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-600 text-sm">{area}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Research Services */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-blue-50 p-12 rounded-2xl">
-            <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Search className="h-8 w-8 text-blue-600" />
-            </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Research Services</h2>
-            <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              At OpenAccess We provide data and insight to support your business, marketing, 
-              from identifying market opportunities to targeting customers, designing products and services.
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              We provide support in identifying and understanding competitors and also 
-              promotions and pricing for your marketing strategy.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Process Section */}
       <section className="py-20 bg-gray-50 -mx-22">
-        <div className="max-w-7xl mx-auto px-22">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Our Service Process
@@ -446,68 +397,91 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Annual HR Training Section */}
+      {/* Annual HR Training Section - Updated for 2025 */}
       <section className="py-20 bg-blue-600 text-white -mx-22">
-        <div className="max-w-7xl mx-auto px-22">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Annual HR Professional Training
+              2025 Intensive Hands-On HR Training
             </h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Join 500+ HR professionals for our comprehensive annual training program. 
-              Stay ahead of industry trends and earn professional development credits.
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-4">
+              Are you an aspiring or practicing HR professional looking to bridge the gap between theory and real-life HR practice? 
+              Join our virtual intensive hands-on training designed to equip you with practical tools and confidence to succeed in any HR role.
             </p>
-            <div className="mt-6">
-              <p className="text-blue-200">Please request for our training calendar for more information</p>
+            <div className="bg-yellow-500 text-black px-6 py-3 rounded-full text-lg font-bold inline-block mb-4">
+              EARLY BIRD SPECIAL: ₦120,000 (Save ₦30,000!)
             </div>
+            <p className="text-blue-200">Second Edition - Virtual Training</p>
           </div>
 
           {/* Training Details */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-16">
             <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
               <Calendar className="h-12 w-12 text-blue-300 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Dates</h3>
-              <p className="text-blue-100">March 15-16, 2024</p>
-              <p className="text-sm text-blue-200">Friday & Saturday</p>
+              <h3 className="text-xl font-semibold mb-2">Start Date</h3>
+              <p className="text-blue-100">2nd August, 2025</p>
+              <p className="text-sm text-blue-200">Saturday Only</p>
             </div>
             <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
               <Clock className="h-12 w-12 text-blue-300 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Time</h3>
-              <p className="text-blue-100">8:00 AM - 4:30 PM</p>
-              <p className="text-sm text-blue-200">Both days</p>
+              <p className="text-blue-100">10am - 1pm</p>
+              <p className="text-sm text-blue-200">Weekly sessions</p>
             </div>
             <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
               <Users className="h-12 w-12 text-blue-300 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Format</h3>
-              <p className="text-blue-100">In-Person & Virtual</p>
-              <p className="text-sm text-blue-200">Hybrid experience</p>
+              <p className="text-blue-100">Virtual Training</p>
+              <p className="text-sm text-blue-200">Online sessions</p>
             </div>
             <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
               <Award className="h-12 w-12 text-blue-300 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Credits</h3>
-              <p className="text-blue-100">12 SHRM/HRCI</p>
-              <p className="text-sm text-blue-200">Certification credits</p>
+              <h3 className="text-xl font-semibold mb-2">Duration</h3>
+              <p className="text-blue-100">12 Weeks</p>
+              <p className="text-sm text-blue-200">Comprehensive program</p>
             </div>
           </div>
 
-          {/* Training Highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {trainingHighlights.map((highlight, index) => (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur p-8 rounded-xl text-center"
-              >
-                <div className="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <highlight.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold mb-4">
-                  {highlight.title}
-                </h3>
-                <p className="text-blue-100 leading-relaxed">
-                  {highlight.description}
-                </p>
-              </div>
-            ))}
+          {/* What You'll Learn */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div className="bg-white/10 backdrop-blur p-8 rounded-xl">
+              <h3 className="text-xl font-bold mb-6">What You'll Learn:</h3>
+              <ul className="space-y-3">
+                {[
+                  'Training & Development',
+                  'PAYE Tax Administration',
+                  'HR Policies & Employee Handbook',
+                  'Leave Management System',
+                  'Offer Letters & Onboarding',
+                  'Labour Law Essentials',
+                  'Termination & Exit Process',
+                  'HR Metrics & Reporting',
+                  'Payroll Management'
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-blue-300" />
+                    <span className="text-blue-100">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white/10 backdrop-blur p-8 rounded-xl">
+              <h3 className="text-xl font-bold mb-6">Who Should Attend:</h3>
+              <ul className="space-y-3">
+                {[
+                  'Entry-level HR Officers',
+                  'Business Owners managing HR functions internally',
+                  'HR Executives seeking to sharpen their operational skills',
+                  'Admin Professionals transitioning into HR',
+                  'HR Generalist'
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-blue-300" />
+                    <span className="text-blue-100">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Registration CTA */}
@@ -525,16 +499,18 @@ const Services = () => {
               <Download className="mr-2 h-5 w-5" />
               Download Brochure
             </button>
-            <p className="text-sm text-blue-200 mt-4">
-              Contact us for training calendar and more information
-            </p>
+            <div className="mt-6 text-center">
+              <p className="text-blue-200 mb-2">For enquiries & Registration:</p>
+              <p className="text-white font-semibold">info@openaccessconsult.com</p>
+              <p className="text-white font-semibold">08066861023</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gray-900 text-white -mx-22">
-        <div className="max-w-4xl mx-auto px-22 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-10 lg:px-28 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
             Ready to Transform Your Business?
           </h2>
