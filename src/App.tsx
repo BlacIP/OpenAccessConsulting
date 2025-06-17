@@ -10,7 +10,7 @@ import Gallery from './pages/Gallery';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/OpenAccessConsulting/">
       <div className="min-h-screen bg-white">
         <Header />
         <main>
