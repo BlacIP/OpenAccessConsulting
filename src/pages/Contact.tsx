@@ -267,13 +267,6 @@ const Contact = () => {
                   title="Open Access Consulting Limited Office Location"
                   loading="lazy"
                 />
-              {/* <div className="text-center">
-                <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500">Interactive Map Would Go Here</p>
-                <p className="text-sm text-gray-400 mt-2">
-                  7 Asiata Solarin Crescent Off Kudirat Abiola Way, Olusosun Bus Stop Oregun, Lagos.
-                </p>
-              </div> */}
             </div>
           </div>
         </div>
