@@ -10,7 +10,7 @@ import Gallery from './pages/Gallery';
 
 function App() {
   return (
-    <Router basename="/OpenAccessConsulting/">
+    <Router basename={import.meta.env.VITE_APP_BASE}>
       <div className="min-h-screen bg-white">
         <Header />
         <main>
