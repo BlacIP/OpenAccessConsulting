@@ -3,7 +3,7 @@ name: Deploy Vite Site to GitHub Pages
 on:
   push:
     branches:
-      - openaccesslocal  # your working branch
+      - openaccesslocal
 
 jobs:
   build-and-deploy:
@@ -18,10 +18,10 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Build
+      - name: Build site
         run: npm run build
 
       - name: Deploy to GitHub Pages
@@ -30,4 +30,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           user_name: BlacIP
-          user_email: omotoyinbobade15@gmail.com
+          user_email: blacip@users.noreply.github.com
