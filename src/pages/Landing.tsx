@@ -56,30 +56,30 @@ const Landing = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden -mx-22">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative bg-gradient-to-br from-[#393235] via-[#4a3f42] to-[#393235] text-white overflow-hidden -mx-22">
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-10 lg:px-28 py-20 lg:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                Transform Your
-                <span className="block text-blue-300">Business Operations</span>
+                <span className="text-[#FDED8F]">Transform Your</span>
+                <span className="block text-[#FDED8F]">Business Operations</span>
               </h1>
-              <p className="text-xl text-blue-100 leading-relaxed">
+              <p className="text-xl text-gray-200 leading-relaxed">
                 Partner with industry experts for comprehensive professional services including 
                 HR solutions, immigration support, recruitment, training, and business consulting.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contact"
-                  className="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center group"
+                  className="bg-[#FDED8F] text-[#393235] px-8 py-4 rounded-lg font-semibold hover:bg-[#fce76b] transition-colors inline-flex items-center justify-center group"
                 >
                   Get Started Today
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   to="/services"
-                  className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors inline-flex items-center justify-center"
+                  className="border-2 border-[#FDED8F]/30 text-[#FDED8F] px-8 py-4 rounded-lg font-semibold hover:bg-[#FDED8F]/10 transition-colors inline-flex items-center justify-center"
                 >
                   View Our Services
                 </Link>
@@ -93,7 +93,7 @@ const Landing = () => {
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
                 <div className="flex items-center space-x-4">
-                  <Calendar className="h-8 w-8 text-blue-600" />
+                  <Calendar className="h-8 w-8 text-[#393235]" />
                   <div>
                     <p className="font-semibold text-gray-900">Annual HR Training</p>
                     <p className="text-sm text-gray-600">Register Now</p>
@@ -106,13 +106,15 @@ const Landing = () => {
       </section>
 
       {/* Trusted Clients Section */}
-      <section className="py-6 bg-gray-50 -mx-22">
+      <section className="py-6 bg-gray-50 -mx-22 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
           <div className="text-center mb-2">
             <h2 className="text-2xl font-bold text-gray-900 mb">Our Trusted Clients</h2>
             <p className="text-s text-gray-600">Partnering with leading organizations across various industries</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-center">
+          
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid grid-cols-6 gap-4 items-center">
             {clientLogos.map((client, index) => (
               <div key={index} className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
                 <img
@@ -122,6 +124,32 @@ const Landing = () => {
                 />
               </div>
             ))}
+          </div>
+
+          {/* Mobile/Tablet Scrolling Animation */}
+          <div className="lg:hidden relative">
+            <div className="flex animate-scroll space-x-4">
+              {/* First set of logos */}
+              {clientLogos.map((client, index) => (
+                <div key={`first-${index}`} className="flex-shrink-0 w-32 h-20 flex items-center justify-center p-4 bg-white rounded-lg shadow-sm">
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="max-h-12 w-auto object-contain filter grayscale"
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {clientLogos.map((client, index) => (
+                <div key={`second-${index}`} className="flex-shrink-0 w-32 h-20 flex items-center justify-center p-4 bg-white rounded-lg shadow-sm">
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="max-h-12 w-auto object-contain filter grayscale"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -136,19 +164,19 @@ const Landing = () => {
             Comprehensive professional services tailored to your organization's unique needs and goals.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow group"
+              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow group border border-gray-100 h-full flex flex-col"
             >
-              <div className="bg-blue-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                <service.icon className="h-8 w-8 text-blue-600 group-hover:text-white transition-colors" />
+              <div className="bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors flex-shrink-0">
+                <service.icon className="h-7 w-7 text-blue-600 group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-l font-semibold text-gray-900 mb-4">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-tight">
                 {service.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed flex-grow">
                 {service.description}
               </p>
             </div>
