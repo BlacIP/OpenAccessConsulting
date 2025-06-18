@@ -194,7 +194,7 @@ const Landing = () => {
       </section>
 
       {/* Training Highlight */}
-      <section className="py-20 lg:py-10 bg-blue-600 text-white -mx-22">
+      <section className="py-20 lg:py-10 bg-gradient-to-br from-[#393235] via-[#4a3f42] to-[#393235] text-white -mx-22">
         <div className=" px-4 sm:px-10 lg:px-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -206,10 +206,10 @@ const Landing = () => {
             </div>
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+                <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-[#FDED8F]">
                   Professional Training Programs
                 </h2>
-                <p className="text-md text-blue-100 leading-relaxed mb-6">
+                <p className="text-md text-gray-200 leading-relaxed mb-6">
                   Enhance your team's capabilities through our comprehensive training programs. 
                   From leadership development to technical skills, we offer customized solutions.
                 </p>
@@ -222,14 +222,14 @@ const Landing = () => {
                   'Professional Certification Programs',
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="h-6 w-6 text-blue-300 flex-shrink-0" />
-                    <span className="text-blue-100 text-sm">{benefit}</span>
+                    <CheckCircle className="h-6 w-6 text-[#FDED8F] flex-shrink-0" />
+                    <span className="text-gray-200 text-sm">{benefit}</span>
                   </div>
                 ))}
               </div>
               <Link
                 to="/services"
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center group"
+                className="bg-[#FDED8F] text-[#393235] px-8 py-4 rounded-lg font-semibold hover:bg-[#fce76b] transition-colors inline-flex items-center group"
               >
                 Learn More & Register
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
