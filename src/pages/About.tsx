@@ -75,7 +75,7 @@ const About = () => {
             </div>
             <div>
               <img
-                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+                src="/src/aboutus-page.jpg"
                 alt="HR consulting team"
                 className="rounded-xl shadow-2xl"
               />

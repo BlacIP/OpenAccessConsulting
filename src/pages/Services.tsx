@@ -241,10 +241,10 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-20 -mx-22">
+      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-20 -mx-22">
         <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-white">
               Our Services
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
@@ -270,28 +270,28 @@ const Services = () => {
           {coreServices.map((service, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow group border border-gray-100 h-96 flex flex-col"
+              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow group border border-gray-100 flex flex-col"
             >
-              <div className="bg-blue-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                <service.icon className="h-8 w-8 text-blue-600 group-hover:text-white transition-colors" />
+              <div className="bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors flex-shrink-0">
+                <service.icon className="h-7 w-7 text-blue-600 group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-tight">
                 {service.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed mb-6 flex-grow">
+              <p className="text-gray-600 leading-relaxed mb-4 text-sm flex-grow">
                 {service.description}
               </p>
-              <div className="space-y-2">
+              <div className="space-y-2 flex-shrink-0">
                 {service.categories.slice(0, 4).map((category, categoryIndex) => (
-                  <div key={categoryIndex} className="flex items-start space-x-3">
-                    <CheckCircle className="h-4 w-4 text-blue-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-600 text-sm">{category}</span>
+                  <div key={categoryIndex} className="flex items-start space-x-2">
+                    <CheckCircle className="h-4 w-4 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-600 text-xs leading-tight">{category}</span>
                   </div>
                 ))}
                 {service.categories.length > 4 && (
                   <button
                     onClick={() => setSelectedService(service)}
-                    className="text-blue-600 text-sm font-medium hover:text-blue-700 transition-colors cursor-pointer"
+                    className="text-blue-600 text-xs font-medium hover:text-blue-700 transition-colors cursor-pointer mt-2"
                   >
                     +{service.categories.length - 4} more services
                   </button>
@@ -398,18 +398,18 @@ const Services = () => {
       </section>
 
       {/* Annual HR Training Section - Updated for 2025 */}
-      <section className="py-20 bg-blue-600 text-white -mx-22">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white -mx-22">
         <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">
               2025 Intensive Hands-On HR Training
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-4">
               Are you an aspiring or practicing HR professional looking to bridge the gap between theory and real-life HR practice? 
               Join our virtual intensive hands-on training designed to equip you with practical tools and confidence to succeed in any HR role.
             </p>
-            <div className="bg-yellow-500 text-black px-6 py-3 rounded-full text-lg font-bold inline-block mb-4">
-              EARLY BIRD SPECIAL: ₦120,000 (Save ₦30,000!)
+            <div className="bg-white text-blue-600 px-6 py-3 rounded-full text-lg font-bold inline-block mb-4">
+              Price: ₦120,000
             </div>
             <p className="text-blue-200">Second Edition - Virtual Training</p>
           </div>
@@ -417,25 +417,25 @@ const Services = () => {
           {/* Training Details */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-16">
             <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
-              <Calendar className="h-12 w-12 text-blue-300 mx-auto mb-4" />
+              <Calendar className="h-12 w-12 text-white mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Start Date</h3>
               <p className="text-blue-100">2nd August, 2025</p>
               <p className="text-sm text-blue-200">Saturday Only</p>
             </div>
             <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
-              <Clock className="h-12 w-12 text-blue-300 mx-auto mb-4" />
+              <Clock className="h-12 w-12 text-white mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Time</h3>
               <p className="text-blue-100">10am - 1pm</p>
               <p className="text-sm text-blue-200">Weekly sessions</p>
             </div>
             <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
-              <Users className="h-12 w-12 text-blue-300 mx-auto mb-4" />
+              <Users className="h-12 w-12 text-white mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Format</h3>
               <p className="text-blue-100">Virtual Training</p>
               <p className="text-sm text-blue-200">Online sessions</p>
             </div>
             <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
-              <Award className="h-12 w-12 text-blue-300 mx-auto mb-4" />
+              <Award className="h-12 w-12 text-white mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Duration</h3>
               <p className="text-blue-100">12 Weeks</p>
               <p className="text-sm text-blue-200">Comprehensive program</p>
@@ -445,7 +445,7 @@ const Services = () => {
           {/* What You'll Learn */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <div className="bg-white/10 backdrop-blur p-8 rounded-xl">
-              <h3 className="text-xl font-bold mb-6">What You'll Learn:</h3>
+              <h3 className="text-xl font-bold mb-6 text-white">What You'll Learn:</h3>
               <ul className="space-y-3">
                 {[
                   'Training & Development',
@@ -459,14 +459,14 @@ const Services = () => {
                   'Payroll Management'
                 ].map((item, index) => (
                   <li key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-blue-300" />
+                    <CheckCircle className="h-5 w-5 text-white" />
                     <span className="text-blue-100">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="bg-white/10 backdrop-blur p-8 rounded-xl">
-              <h3 className="text-xl font-bold mb-6">Who Should Attend:</h3>
+              <h3 className="text-xl font-bold mb-6 text-white">Who Should Attend:</h3>
               <ul className="space-y-3">
                 {[
                   'Entry-level HR Officers',
@@ -476,7 +476,7 @@ const Services = () => {
                   'HR Generalist'
                 ].map((item, index) => (
                   <li key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-blue-300" />
+                    <CheckCircle className="h-5 w-5 text-white" />
                     <span className="text-blue-100">{item}</span>
                   </li>
                 ))}
@@ -490,7 +490,7 @@ const Services = () => {
               href="https://forms.gle/BcFQ6xgm26rvMYvG8"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-blue-600 px-12 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center text-lg group mr-4"
+              className="bg-white text-blue-600 px-12 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center text-lg group mr-4"
             >
               Register Now
               <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
