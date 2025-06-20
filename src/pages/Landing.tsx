@@ -87,7 +87,7 @@ const Landing = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+                src="/src/landing-page.jpg"
                 alt="Professional team meeting"
                 className="rounded-2xl shadow-2xl"
               />
@@ -199,7 +199,7 @@ const Landing = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg"
+                src="/src/training.jpg"
                 alt="Training session"
                 className="rounded-xl shadow-2xl"
               />
