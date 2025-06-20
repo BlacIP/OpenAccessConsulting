@@ -56,30 +56,30 @@ const Landing = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#393235] via-[#4a3f42] to-[#393235] text-white overflow-hidden -mx-22">
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden -mx-22">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-10 lg:px-28 py-20 lg:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                <span className="text-[#FDED8F]">Transform Your</span>
-                <span className="block text-[#FDED8F]">Business Operations</span>
+                <span className="text-white">Transform Your</span>
+                <span className="block text-white">Business Operations</span>
               </h1>
-              <p className="text-xl text-gray-200 leading-relaxed">
+              <p className="text-xl text-blue-100 leading-relaxed">
                 Partner with industry experts for comprehensive professional services including 
                 HR solutions, immigration support, recruitment, training, and business consulting.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contact"
-                  className="bg-[#FDED8F] text-[#393235] px-8 py-4 rounded-lg font-semibold hover:bg-[#fce76b] transition-colors inline-flex items-center justify-center group"
+                  className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center group"
                 >
                   Get Started Today
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   to="/services"
-                  className="border-2 border-[#FDED8F]/30 text-[#FDED8F] px-8 py-4 rounded-lg font-semibold hover:bg-[#FDED8F]/10 transition-colors inline-flex items-center justify-center"
+                  className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors inline-flex items-center justify-center"
                 >
                   View Our Services
                 </Link>
@@ -93,7 +93,7 @@ const Landing = () => {
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
                 <div className="flex items-center space-x-4">
-                  <Calendar className="h-8 w-8 text-[#393235]" />
+                  <Calendar className="h-8 w-8 text-blue-600" />
                   <div>
                     <p className="font-semibold text-gray-900">Annual HR Training</p>
                     <p className="text-sm text-gray-600">Register Now</p>
@@ -194,7 +194,7 @@ const Landing = () => {
       </section>
 
       {/* Training Highlight */}
-      <section className="py-20 lg:py-10 bg-gradient-to-br from-[#393235] via-[#4a3f42] to-[#393235] text-white -mx-22">
+      <section className="py-20 lg:py-10 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white -mx-22">
         <div className=" px-4 sm:px-10 lg:px-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -206,10 +206,10 @@ const Landing = () => {
             </div>
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-[#FDED8F]">
+                <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
                   Professional Training Programs
                 </h2>
-                <p className="text-md text-gray-200 leading-relaxed mb-6">
+                <p className="text-md text-blue-100 leading-relaxed mb-6">
                   Enhance your team's capabilities through our comprehensive training programs. 
                   From leadership development to technical skills, we offer customized solutions.
                 </p>
@@ -222,14 +222,14 @@ const Landing = () => {
                   'Professional Certification Programs',
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="h-6 w-6 text-[#FDED8F] flex-shrink-0" />
-                    <span className="text-gray-200 text-sm">{benefit}</span>
+                    <CheckCircle className="h-6 w-6 text-white flex-shrink-0" />
+                    <span className="text-blue-100 text-sm">{benefit}</span>
                   </div>
                 ))}
               </div>
               <Link
                 to="/services"
-                className="bg-[#FDED8F] text-[#393235] px-8 py-4 rounded-lg font-semibold hover:bg-[#fce76b] transition-colors inline-flex items-center group"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center group"
               >
                 Learn More & Register
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

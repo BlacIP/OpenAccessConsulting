@@ -58,15 +58,15 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#393235] via-[#4a3f42] to-[#393235] text-white py-20 -mx-22">
+      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-20 -mx-22">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-[#FDED8F]">
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-white">
                 About <br /> 
                 OPENACCESS CONSULTING
               </h1>
-              <p className="text-l text-gray-200 leading-relaxed">
+              <p className="text-l text-blue-100 leading-relaxed">
                 Open Access is a professional services firm dedicated to delivering
                 strategic solutions in human capital development, expatriate and
                 immigration services, recruitment, background check services, value-
