@@ -75,7 +75,7 @@ const About = () => {
             </div>
             <div>
               <img
-                src="/src/aboutus-page.jpg"
+                src={`${import.meta.env.BASE_URL}aboutus-page.jpg`} 
                 alt="HR consulting team"
                 className="rounded-xl shadow-2xl"
               />

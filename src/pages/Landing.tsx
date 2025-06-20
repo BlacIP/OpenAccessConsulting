@@ -27,30 +27,30 @@ const Landing = () => {
   ];
 
   const clientLogos = [
-    {
-      name: 'Karflex Fisheries Limited',
-      logo: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg',
-    },
-    {
-      name: 'SoftHealth',
-      logo: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg',
-    },
-    {
-      name: 'MoneyTronics Microfinance Bank',
-      logo: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg',
-    },
-    {
-      name: 'Infinity Microfinance Bank',
-      logo: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg',
-    },
-    {
-      name: 'Lyceum College',
-      logo: 'https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg',
-    },
-    {
-      name: 'Imperial Homes',
-      logo: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg',
-    },
+   {
+    name: 'Karflex Fisheries Limited',
+    logo: `${import.meta.env.BASE_URL}karflex.png`,
+  },
+  {
+    name: 'SoftHealth',
+    logo: `${import.meta.env.BASE_URL}softhealth.jpg`,
+  },
+  {
+    name: 'MoneyTronics Microfinance Bank',
+    logo: `${import.meta.env.BASE_URL}monie-tronics.png`,
+  },
+  {
+    name: 'Infinity Microfinance Bank',
+    logo: `${import.meta.env.BASE_URL}infinity-mfb.jpg`,
+  },
+  {
+    name: 'Lyceum College',
+    logo: `${import.meta.env.BASE_URL}lyceum.png`,
+  },
+  {
+    name: 'Imperial Homes',
+    logo: `${import.meta.env.BASE_URL}imperial-consult.png`,
+  },
   ];
 
   return (
@@ -87,7 +87,7 @@ const Landing = () => {
             </div>
             <div className="relative">
               <img
-                src="/src/landing-page.jpg"
+                src={`${import.meta.env.BASE_URL}landing-page.jpg`}
                 alt="Professional team meeting"
                 className="rounded-2xl shadow-2xl"
               />
@@ -199,7 +199,7 @@ const Landing = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="/src/training.jpg"
+                src={`${import.meta.env.BASE_URL}training.jpg`}
                 alt="Training session"
                 className="rounded-xl shadow-2xl"
               />

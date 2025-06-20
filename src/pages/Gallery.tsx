@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { X, Calendar, Users, MapPin, Award } from 'lucide-react';
+import { X, Calendar, Users, MapPin, Award, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   const galleryImages = [
     {
@@ -134,24 +134,33 @@ const Gallery = () => {
     }
   ];
 
+  // Modal navigation helpers
+  const openModal = (idx: number) => setSelectedImageIndex(idx);
+  const closeModal = () => setSelectedImageIndex(null);
+  const prevImage = () => setSelectedImageIndex(idx => (idx !== null && idx > 0 ? idx - 1 : idx));
+  const nextImage = () => setSelectedImageIndex(idx => (idx !== null && idx < filteredImages.length - 1 ? idx + 1 : idx));
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white py-20 -mx-22">
-        <div className="max-w-7xl mx-auto px-28 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
+          <div className='text-center'>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6" >
             Event Gallery
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Explore moments from our training sessions, conferences, and consulting engagements. 
             See the impact we're making in the business community.
-          </p>
+          </p> 
+          </div>
         </div>
       </section>
+      
 
       {/* Event Highlights */}
       <section className="py-20 bg-gray-50 -mx-22">
-        <div className="max-w-7xl mx-auto px-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Recent Events
@@ -197,7 +206,7 @@ const Gallery = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 px-28">
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Photo Gallery
@@ -226,11 +235,11 @@ const Gallery = () => {
 
         {/* Image Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredImages.map((image) => (
+          {filteredImages.map((image, index) => (
             <div
               key={image.id}
               className="group cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow"
-              onClick={() => setSelectedImage(image.src)}
+              onClick={() => openModal(index)}
             >
               <div className="aspect-square overflow-hidden">
                 <img
@@ -256,20 +265,80 @@ const Gallery = () => {
       </section>
 
       {/* Image Modal */}
-      {selectedImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
-          <div className="relative max-w-4xl max-h-full">
+      {selectedImageIndex !== null && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center z-50 p-4">
+          <div className="relative w-full max-w-4xl flex flex-col md:flex-row items-center justify-center">
+            {/* Close Button */}
             <button
-              onClick={() => setSelectedImage(null)}
+              onClick={closeModal}
               className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
             >
               <X className="h-8 w-8" />
             </button>
+
+            {/* Left Button (Desktop/Tablet) */}
+            {selectedImageIndex > 0 && (
+              <button
+                onClick={prevImage}
+                className="hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 rounded-full p-2"
+              >
+                <ChevronLeft className="h-8 w-8" />
+              </button>
+            )}
+
+            {/* Main Image */}
             <img
-              src={selectedImage}
-              alt="Gallery image"
-              className="max-w-full max-h-full object-contain rounded-lg"
+              src={filteredImages[selectedImageIndex].src}
+              alt={filteredImages[selectedImageIndex].alt}
+              className="max-w-full max-h-[70vh] object-contain rounded-lg"
             />
+
+            {/* Right Button (Desktop/Tablet) */}
+            {selectedImageIndex < filteredImages.length - 1 && (
+              <button
+                onClick={nextImage}
+                className="hidden md:block absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 rounded-full p-2"
+              >
+                <ChevronRight className="h-8 w-8" />
+              </button>
+            )}
+          </div>
+
+          {/* Mobile Thumbnails */}
+          {filteredImages.length > 1 && (
+            <div className="flex md:hidden mt-4 gap-2 overflow-x-auto w-full justify-center">
+              {filteredImages.map((img, idx) => (
+                <img
+                  key={img.id}
+                  src={img.src}
+                  alt={img.alt}
+                  className={`h-16 w-16 object-cover rounded-lg border-2 ${
+                    idx === selectedImageIndex
+                      ? "border-white"
+                      : "border-transparent"
+                  }`}
+                  onClick={() => setSelectedImageIndex(idx)}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Left/Right Buttons for Mobile */}
+          <div className="flex md:hidden justify-between w-full mt-4">
+            <button
+              onClick={prevImage}
+              disabled={selectedImageIndex === 0}
+              className="text-white bg-black bg-opacity-50 rounded-full p-2 disabled:opacity-30"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={nextImage}
+              disabled={selectedImageIndex === filteredImages.length - 1}
+              className="text-white bg-black bg-opacity-50 rounded-full p-2 disabled:opacity-30"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
           </div>
         </div>
       )}
