@@ -5,18 +5,11 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   
-  // Check if the environment is Netlify
+  // Check if it's Netlify environment based on the reserved NETLIFY variable
   const isNetlify = process.env.NETLIFY === 'true';
 
-  // Determine base path
-  const basePath = isNetlify
-    ? '/' // Root path for Netlify
-    : mode === 'production' // For GitHub Pages production
-    ? '/OpenAccessConsulting/'
-    : '/OpenAccessConsulting/staging/'; // For GitHub Pages staging
-
   return {
-    base: basePath, // Dynamically set the base path based on the environment
+    base: isNetlify ? '/' : env.VITE_APP_BASE,  // Use root for Netlify, base path for GitHub Pages
     plugins: [react()],
     optimizeDeps: {
       exclude: ['lucide-react'],
