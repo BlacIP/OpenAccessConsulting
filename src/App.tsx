@@ -9,11 +9,8 @@ import Services from './pages/Services';
 import Gallery from './pages/Gallery';
 
 function App() {
-  // Dynamically set the basename based on the environment
-  const basePath = process.env.REACT_APP_BASE_PATH || '/'; // Default to root for Netlify
-
   return (
-    <Router basename={basePath}> {/* Dynamically set the base path */}
+    <Router basename={import.meta.env.VITE_APP_BASE}>
       <div className="min-h-screen bg-white">
         <Header />
         <main>
