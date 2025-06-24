@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
   }
   // For GitHub Pages production
   else if (mode === 'production') {
-    basePath = env.REACT_APP_BASE_GITHUB || '/OpenAccessConsulting/';
+    basePath = env.VITE_APP_BASE|| '/OpenAccessConsulting/';
   }
   // For GitHub Pages staging
   else if (mode === 'staging') {
