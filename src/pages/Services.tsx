@@ -486,19 +486,21 @@ const Services = () => {
 
           {/* Registration CTA */}
           <div className="text-center">
-            <a
-              href="https://forms.gle/BcFQ6xgm26rvMYvG8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-blue-600 px-12 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center text-lg group mr-4"
-            >
-              Register Now
-              <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <button className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors inline-flex items-center">
-              <Download className="mr-2 h-5 w-5" />
-              Download Brochure
-            </button>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+              <a
+                href="https://forms.gle/BcFQ6xgm26rvMYvG8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-blue-600 px-12 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center text-lg group md:mr-4"
+              >
+                Register Now
+                <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <button className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors inline-flex items-center">
+                <Download className="mr-2 h-5 w-5" />
+                Download Brochure
+              </button>
+            </div>
             <div className="mt-6 text-center">
               <p className="text-blue-200 mb-2">For enquiries & Registration:</p>
               <p className="text-white font-semibold">info@openaccessconsult.com</p>
