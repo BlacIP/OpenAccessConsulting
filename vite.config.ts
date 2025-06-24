@@ -7,13 +7,13 @@ export default defineConfig(({ mode }) => {
 
   let basePath;
 
-  // For Netlify (root path)
-  if (process.env.NETLIFY === 'true') {
+  if (process.env.VITE_IS_NETLIFY === 'true') {
     basePath = '/';  // Root path for Netlify
   }
   // For GitHub Pages production
   else if (mode === 'production') {
-    basePath = env.REACT_APP_BASE_PATH || '/OpenAccessConsulting/';
+
+    basePath = env.VITE_APP_BASE|| '/OpenAccessConsulting/';
   }
   // For GitHub Pages staging
   else if (mode === 'staging') {
