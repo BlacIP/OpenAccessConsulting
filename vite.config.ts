@@ -7,9 +7,12 @@ export default defineConfig(({ mode }) => {
 
   let basePath;
 
-  if (env.VITE_IS_NETLIFY === 'true') {
-    basePath = '/';  // Root path for Netlify
-  }
+  // Add this line to check if we're on Netlify
+const isNetlify = process.env.NETLIFY || env.VITE_IS_NETLIFY === 'true';
+
+if (isNetlify) {
+  basePath = '/';  // Root path for Netlify
+}
   // For GitHub Pages production
   else if (mode === 'production') {
 
