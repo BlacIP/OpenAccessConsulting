@@ -144,7 +144,7 @@ const Gallery = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white py-20 -mx-22">
-        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
+        <div className="mx-auto px-4 sm:px-10 lg:px-28">
           <div className='text-center'>
             <h1 className="text-4xl lg:text-5xl font-bold mb-6" >
             Event Gallery
@@ -160,7 +160,7 @@ const Gallery = () => {
 
       {/* Event Highlights */}
       <section className="py-20 bg-gray-50 -mx-22">
-        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
+        <div className="mx-auto px-4 sm:px-10 lg:px-28">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Recent Events
@@ -206,7 +206,7 @@ const Gallery = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
+      <section className="py-20 mx-auto px-4 sm:px-10 lg:px-28">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Photo Gallery
