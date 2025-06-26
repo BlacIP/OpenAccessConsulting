@@ -16,7 +16,7 @@ if (isNetlify) {
   // For GitHub Pages production
   else if (mode === 'production') {
 
-    basePath = env.VITE_APP_BASE|| '/OpenAccessConsulting/';
+    basePath = env.VITE_APP|| '/OpenAccessConsulting/';
   }
   // For GitHub Pages staging
   else if (mode === 'staging') {
