@@ -391,116 +391,22 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Annual HR Training Section - Updated for 2025 */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white -mx-22">
-        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">
-              2025 Intensive Hands-On HR Training
-            </h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-4">
-              Are you an aspiring or practicing HR professional looking to bridge the gap between theory and real-life HR practice? 
-              Join our virtual intensive hands-on training designed to equip you with practical tools and confidence to succeed in any HR role.
-            </p>
-            <div className="bg-white text-blue-600 px-6 py-3 rounded-full text-lg font-bold inline-block mb-4">
-              Price: ₦120,000
-            </div>
-            <p className="text-blue-200">Second Edition - Virtual Training</p>
-          </div>
-
-          {/* Training Details */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-16">
-            <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
-              <Calendar className="h-12 w-12 text-white mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Start Date</h3>
-              <p className="text-blue-100">2nd August, 2025</p>
-              <p className="text-sm text-blue-200">Saturday Only</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
-              <Clock className="h-12 w-12 text-white mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Time</h3>
-              <p className="text-blue-100">10am - 1pm</p>
-              <p className="text-sm text-blue-200">Weekly sessions</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
-              <Users className="h-12 w-12 text-white mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Format</h3>
-              <p className="text-blue-100">Virtual Training</p>
-              <p className="text-sm text-blue-200">Online sessions</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
-              <Award className="h-12 w-12 text-white mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Duration</h3>
-              <p className="text-blue-100">12 Weeks</p>
-              <p className="text-sm text-blue-200">Comprehensive program</p>
-            </div>
-          </div>
-
-          {/* What You'll Learn */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-white/10 backdrop-blur p-8 rounded-xl">
-              <h3 className="text-xl font-bold mb-6 text-white">What You'll Learn:</h3>
-              <ul className="space-y-3">
-                {[
-                  'Training & Development',
-                  'PAYE Tax Administration',
-                  'HR Policies & Employee Handbook',
-                  'Leave Management System',
-                  'Offer Letters & Onboarding',
-                  'Labour Law Essentials',
-                  'Termination & Exit Process',
-                  'HR Metrics & Reporting',
-                  'Payroll Management'
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-white" />
-                    <span className="text-blue-100">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white/10 backdrop-blur p-8 rounded-xl">
-              <h3 className="text-xl font-bold mb-6 text-white">Who Should Attend:</h3>
-              <ul className="space-y-3">
-                {[
-                  'Entry-level HR Officers',
-                  'Business Owners managing HR functions internally',
-                  'HR Executives seeking to sharpen their operational skills',
-                  'Admin Professionals transitioning into HR',
-                  'HR Generalist'
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-white" />
-                    <span className="text-blue-100">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Registration CTA */}
-          <div className="text-center">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-              <a
-                href="https://forms.gle/BcFQ6xgm26rvMYvG8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-blue-600 px-12 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center text-lg group md:mr-4"
-              >
-                Register Now
-                <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <button className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors inline-flex items-center">
-                <Download className="mr-2 h-5 w-5" />
-                Download Brochure
-              </button>
-            </div>
-            <div className="mt-6 text-center">
-              <p className="text-blue-200 mb-2">For enquiries & Registration:</p>
-              <p className="text-white font-semibold">info@openaccessconsult.com</p>
-              <p className="text-white font-semibold">08066861023</p>
-            </div>
-          </div>
+      {/* Training CTA Section */}
+      <section className="py-20 bg-blue-600 text-white -mx-22">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+            Ready to Enhance Your HR Skills?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            Join our 2025 Intensive Hands-On HR Training program and bridge the gap between theory and practice.
+          </p>
+          <Link
+            to="/enroll-for-training"
+            className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center group text-lg"
+          >
+            Learn More About Training
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </section>
 
