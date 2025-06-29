@@ -6,7 +6,7 @@ const Landing = () => {
   const services = [
     {
       icon: Users,
-      title: 'Recruitment Services',
+      title: 'Recruitment Service',
       description: 'Comprehensive recruitment solutions across hospitality, manufacturing, healthcare, and more.',
     },
     {
