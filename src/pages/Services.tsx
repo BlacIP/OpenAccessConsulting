@@ -31,11 +31,11 @@ const Services = () => {
   const coreServices = [
     {
       icon: Users,
-      title: 'Recruitment Services',
+      title: 'Recruitment Service',
       description: 'Comprehensive recruitment solutions across multiple industries and sectors.',
       categories: [
         'Hospitality',
-        'Manufacturing Professionals',
+        'Manufacturing Professional',
         'Hospital',
         'Financial Institution',
         'Pharmaceutical',
