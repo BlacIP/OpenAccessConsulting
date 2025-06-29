@@ -11,8 +11,8 @@ const Header = () => {
     { path: '/about', label: 'About Us' },
     { path: '/services', label: 'Our Services' },
     { path: '/gallery', label: 'Gallery' },
-    { path: '/enroll-for-training', label: 'Enroll for Training' },
     { path: '/contact', label: 'Contact' },
+    { path: '/enroll-for-training', label: 'Enroll for Training', isCTA: true },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -30,15 +30,17 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8 items-center">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                  isActive(item.path)
+                className={`text-sm font-medium transition-colors ${
+                  item.isCTA
+                    ? 'bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700'
+                    : isActive(item.path)
                     ? 'text-blue-600 border-b-2 border-blue-600 pb-1'
-                    : 'text-gray-700'
+                    : 'text-gray-700 hover:text-blue-600'
                 }`}
               >
                 {item.label}
@@ -69,7 +71,9 @@ const Header = () => {
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
                   className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                    isActive(item.path)
+                    item.isCTA
+                      ? 'bg-blue-600 text-white hover:bg-blue-700 mx-2'
+                      : isActive(item.path)
                       ? 'text-blue-600 bg-blue-50'
                       : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                   }`}
