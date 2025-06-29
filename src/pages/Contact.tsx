@@ -59,8 +59,7 @@ const Contact = () => {
     'Recruitment Services',
     'Employee Verification',
     'Outsourcing Services',
-    'Training & Development' Training & Development
-,
+    'Training & Development',
     'Expatriate & Immigration Services',
     'Business Support Solutions',
     'Human Resource Services',
