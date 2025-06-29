@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Users, Menu, X } from 'lucide-react';
 
@@ -17,12 +17,25 @@ const Header = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  // Scroll to top when location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
+    // Small delay to ensure the menu closes before scrolling
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+  };
+
   return (
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div className="mx-auto px-4 sm:px-10 lg:px-28">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
+          <Link to="/" className="flex items-center space-x-2 group" onClick={handleNavClick}>
             <div className="bg-blue-600 p-2 rounded-lg group-hover:bg-blue-700 transition-colors">
               <Users className="h-6 w-6 text-white" />
             </div>
@@ -35,6 +48,7 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
+                onClick={handleNavClick}
                 className={`text-sm font-medium transition-colors ${
                   item.isCTA
                     ? 'bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700'
@@ -69,7 +83,7 @@ const Header = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={handleNavClick}
                   className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
                     item.isCTA
                       ? 'bg-blue-600 text-white hover:bg-blue-700 mx-2'
