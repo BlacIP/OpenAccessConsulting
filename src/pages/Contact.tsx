@@ -42,9 +42,9 @@ Best regards,
 ${formData.name}
     `.trim();
 
-    // Create mailto URL
+    // Create mailto URL with CC
     const subject = `Service Inquiry from ${formData.name}`;
-    const mailtoUrl = `mailto:info@openaccessconsult.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoUrl = `mailto:info@openaccessconsult.com?cc=openaccessconsulting@gmail.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
     
     // Open default mail client
     window.location.href = mailtoUrl;
