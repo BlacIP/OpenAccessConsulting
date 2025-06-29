@@ -34,7 +34,6 @@ const Services = () => {
       title: 'Recruitment Service',
       description: 'Comprehensive recruitment solutions across multiple industries and sectors.',
       categories: [
-        'Hospitality',
         'Manufacturing Professional',
         'Hospital',
         'Financial Institution',
@@ -84,7 +83,6 @@ const Services = () => {
         'Customer Service',
         'Professional Development Program',
         'Management Development Program',
-        'Hospitality',
         'Human Resource Training',
         'Finance & Accounting'
       ]
@@ -109,7 +107,6 @@ const Services = () => {
       title: 'Business Support Solutions',
       description: 'Comprehensive business support across multiple functional areas.',
       categories: [
-        'Expatriate & Immigration Services',
         'Human Resource',
         'Warehouse Management',
         'Marketing & Sales',
@@ -125,12 +122,10 @@ const Services = () => {
       title: 'Human Resource Services',
       description: 'Complete HR solutions to manage and optimize your human capital.',
       categories: [
-        'Employee handbook',
-        'Absence management',
+        'Attendance Device Supply and Management',
         'Performance management',
         'Training',
-        'Human resource need assessment',
-        'Health and safety',
+        'Outsourcing',
         'Career management',
         'Recruitment',
         'Policies and procedure development',
@@ -168,8 +163,7 @@ const Services = () => {
         'Cash flow',
         'Vendor management',
         'Hotel management',
-        'Payment and Receivable',
-        'Education service delivery'
+        'Payment and Receivable'
       ]
     },
     {
