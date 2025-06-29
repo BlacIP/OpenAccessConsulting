@@ -1,8 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, Users, Target, TrendingUp, Award, Calendar, CheckCircle, Globe, Shield, BookOpen } from 'lucide-react';
 
 const Landing = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+  };
+
   const services = [
     {
       icon: Users,
@@ -70,19 +79,19 @@ const Landing = () => {
                 HR solutions, immigration support, recruitment, training, and business consulting.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/contact"
-                  className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center group"
+                <button
+                  onClick={() => handleNavigation('/contact')}
+                  className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center group cursor-pointer"
                 >
                   Get Started Today
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  to="/services"
-                  className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors inline-flex items-center justify-center"
+                </button>
+                <button
+                  onClick={() => handleNavigation('/services')}
+                  className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors inline-flex items-center justify-center cursor-pointer"
                 >
                   View Our Services
-                </Link>
+                </button>
               </div>
             </div>
             <div className="relative">
@@ -183,13 +192,13 @@ const Landing = () => {
           ))}
         </div>
         <div className="text-center mt-12">
-          <Link
-            to="/services"
-            className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center group"
+          <button
+            onClick={() => handleNavigation('/services')}
+            className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center group cursor-pointer"
           >
             View All Services
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </button>
         </div>
       </section>
 
@@ -227,13 +236,13 @@ const Landing = () => {
                   </div>
                 ))}
               </div>
-              <Link
-                to="/enroll-for-training"
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center group"
+              <button
+                onClick={() => handleNavigation('/enroll-for-training')}
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center group cursor-pointer"
               >
                 Learn More & Register
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -249,13 +258,13 @@ const Landing = () => {
             Let's discuss how we can help your organization achieve its goals 
             and build sustainable growth through our comprehensive services.
           </p>
-          <Link
-            to="/contact"
-            className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center group"
+          <button
+            onClick={() => handleNavigation('/contact')}
+            className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center group cursor-pointer"
           >
             Schedule a Consultation
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </button>
         </div>
       </section>
     </div>
