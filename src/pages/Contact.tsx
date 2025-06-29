@@ -22,8 +22,34 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    
+    // Create email body with form data
+    const emailBody = `
+Hello,
+
+I would like to inquire about your services. Please find my details below:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company || 'Not specified'}
+Phone: ${formData.phone || 'Not specified'}
+Service Interest: ${formData.service || 'Not specified'}
+
+Message:
+${formData.message}
+
+Best regards,
+${formData.name}
+    `.trim();
+
+    // Create mailto URL
+    const subject = `Service Inquiry from ${formData.name}`;
+    const mailtoUrl = `mailto:info@openaccessconsult.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open default mail client
+    window.location.href = mailtoUrl;
+    
+    // Show success message
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
   };
@@ -202,7 +228,7 @@ const Contact = () => {
                   {isSubmitted ? (
                     <>
                       <CheckCircle className="h-5 w-5 mr-2" />
-                      Message Sent!
+                      Opening Email Client...
                     </>
                   ) : (
                     <>
