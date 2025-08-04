@@ -170,6 +170,30 @@ const CoreServices = () => {
         'Promotional strategy research',
         'Business intelligence'
       ]
+    },
+    {
+      icon: Shield,
+      title: 'Certificate, Audit & Registration',
+      description: 'Comprehensive certification, audit, and regulatory registration services for oil & gas and other industries.',
+      categories: [
+        'NIPEX Registration (New, Renewals, PCA)',
+        'DPR/NUPRC/NMDPRA Permits',
+        'NCDMB NOGIC JQS Registration',
+        'COREN Certification',
+        'Dun & Bradstreet D-U-N-S® Registration',
+        'Offshore Safety Permit (OSP)',
+        'Weight & Measure Permits',
+        'Certificate of Pattern Approval',
+        'Second Party (2nd Party) Audits',
+        'Contractor Safety Audits',
+        'Regulatory Compliance Audits',
+        'Prequalification Audits',
+        'ISO 45001:2018 Stage 1 & 2 Certification Audits',
+        'Internal Occupational Health & Safety (OHS) Audits',
+        'Internal ISO 45001 Compliance Audits',
+        'Regulatory Audit',
+        'NIPEX Audit'
+      ]
     }
   ];
 
