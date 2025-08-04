@@ -173,12 +173,12 @@ const CoreServices = () => {
     },
     {
       icon: Shield,
-      title: 'Certificate, Audit & Registration',
+      title: 'Regulatory Compliance, Certification & Audit Services',
       description: 'Comprehensive certification, audit, and regulatory registration services for oil & gas and other industries.',
       categories: [
         'NIPEX Registration (New, Renewals, PCA)',
         'DPR/NUPRC/NMDPRA Permits',
-        'NCDMB NOGIC JQS Registration',
+        'NCDMB & NOGIC JQS Registration',
         'COREN Certification',
         'Dun & Bradstreet D-U-N-S® Registration',
         'Offshore Safety Permit (OSP)',
