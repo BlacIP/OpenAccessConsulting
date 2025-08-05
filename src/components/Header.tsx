@@ -37,7 +37,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group" onClick={handleNavClick}>
             <img
-              src="/src/assets/Logo/black.png"
+              src="/Logo/black.png"
               alt="OpenAccess Consulting"
               className="h-10 w-auto"
             />
