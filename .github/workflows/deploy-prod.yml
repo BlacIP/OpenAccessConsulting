@@ -2,13 +2,11 @@ name: Deploy Production to GitHub Pages
 
 on:
   push:
-    branches:
-      - main  # Trigger this on pushes to the main branch
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -21,6 +19,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Force Vite base to root for the custom domain
+      - name: Set Vite base for custom domain
+        run: echo "VITE_APP_BASE=/" >> $GITHUB_ENV
+
       - name: Build for Production
         run: npm run build -- --mode production
 
@@ -28,7 +30,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
           publish_dir: ./dist
-          destination_dir: .  # Deploy to root
-          user_name: BlacIP
-          user_email: blacip@users.noreply.github.com
+          cname: openaccessconsult.com     # writes CNAME at branch root
+          keep_files: true                 # keep /staging intact
+          enable_jekyll: false
