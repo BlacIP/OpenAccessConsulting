@@ -8,8 +8,8 @@ const Header = () => {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/about', label: 'About Us' },
-    { path: '/services', label: 'Our Services' },
+    { path: '/about', label: 'About us' },
+    { path: '/services', label: 'Our services' },
     { path: '/gallery', label: 'Gallery' },
     { path: '/contact', label: 'Contact' },
     { path: '/enroll-for-training', label: 'Enroll for Training', isCTA: true },

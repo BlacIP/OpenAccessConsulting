@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Target, 
+  // Target, 
   Users, 
-  TrendingUp, 
+  // TrendingUp, 
   CheckCircle, 
   ArrowRight, 
   Briefcase,
   Shield,
   BookOpen,
-  Search,
+  // Search,
   Building,
   Globe,
   X
@@ -94,17 +94,23 @@ const CoreServices = () => {
     },
     {
       icon: Building,
-      title: 'Business Support Solutions',
+      title: 'Pre-Employment Tests',
       description: 'Comprehensive business support across multiple functional areas.',
       categories: [
-        'Human Resource',
-        'Warehouse Management',
-        'Marketing & Sales',
-        'Team Structure Management',
-        'Business Startup Advisory',
-        'Organisation & Process Improvement',
-        'Research Outsourcing',
-        'Business Management'
+        'Cognitive Ability Test',
+        'Personality Test',
+        'Aptitude Test',
+        'Skills Assessment Test',
+        'Emotional Intelligence (EQ) Test',
+        'Situational Judgment Test (SJT)',
+        'Integrity/Honesty Test',
+        'Job Knowledge Test',
+        'Language Proficiency Test',
+        'Psychometric Test',
+        'Culture Fit Assessment',
+        'Technical Competency Test',
+        'Numerical & Verbal Reasoning Test',
+        'Leadership/Management Assessment'
       ]
     },
     {

@@ -10,7 +10,7 @@ const TrainingCTA = () => {
           Ready to Enhance Your HR Skills?
         </h2>
         <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-          Join our 2025 Intensive Hands-On HR Training program and bridge the gap between theory and practice.
+          Join our Intensive Hands-On HR Training program and bridge the gap between theory and practice.
         </p>
         <Link
           to="/enroll-for-training"
