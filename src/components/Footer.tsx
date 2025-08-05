@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -9,10 +9,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="bg-blue-600 p-2 rounded-lg">
-                <Users className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-xl font-bold">OPENACCESS CONSULTING</span>
+              <img
+                src="/src/assets/Logo/Open Access consult Logo.svg"
+                alt="OpenAccess Consulting"
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-gray-300 text-sm leading-6">
               Empowering organizations through strategic HR consulting and professional development training.

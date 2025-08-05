@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Users, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,10 +36,11 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group" onClick={handleNavClick}>
-            <div className="bg-blue-600 p-2 rounded-lg group-hover:bg-blue-700 transition-colors">
-              <Users className="h-6 w-6 text-white" />
-            </div>
-            <span className="text-xl font-bold text-gray-900">OPENACCESS CONSULTING</span>
+            <img
+              src="/src/assets/Logo/black.svg"
+              alt="OpenAccess Consulting"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
