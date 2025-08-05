@@ -125,52 +125,52 @@ const CoreServices = () => {
         'Employee relation support'
       ]
     },
-    {
-      icon: TrendingUp,
-      title: 'Business Management',
-      description: 'Strategic business management services to drive growth and efficiency.',
-      categories: [
-        'Strategic planning',
-        'Development of vision and mission',
-        'Financial management',
-        'Leadership and management development',
-        'Sales increase',
-        'Business restructuring',
-        'Cost reduction',
-        'Business set up support',
-        'Competitors analysis'
-      ]
-    },
-    {
-      icon: Target,
-      title: 'Organisation & Process Improvement',
-      description: 'Optimize your organizational processes across all business areas.',
-      categories: [
-        'Warehouse',
-        'Accounting',
-        'Human resource',
-        'Production',
-        'Cash flow',
-        'Vendor management',
-        'Hotel management',
-        'Payment and Receivable'
-      ]
-    },
-    {
-      icon: Search,
-      title: 'Research Services',
-      description: 'Data and insights to support your business and marketing strategies.',
-      categories: [
-        'Market opportunity identification',
-        'Customer targeting research',
-        'Product and service design research',
-        'Competitor analysis',
-        'Marketing strategy development',
-        'Pricing research',
-        'Promotional strategy research',
-        'Business intelligence'
-      ]
-    },
+    // {
+    //   icon: TrendingUp,
+    //   title: 'Business Management',
+    //   description: 'Strategic business management services to drive growth and efficiency.',
+    //   categories: [
+    //     'Strategic planning',
+    //     'Development of vision and mission',
+    //     'Financial management',
+    //     'Leadership and management development',
+    //     'Sales increase',
+    //     'Business restructuring',
+    //     'Cost reduction',
+    //     'Business set up support',
+    //     'Competitors analysis'
+    //   ]
+    // },
+    // {
+    //   icon: Target,
+    //   title: 'Organisation & Process Improvement',
+    //   description: 'Optimize your organizational processes across all business areas.',
+    //   categories: [
+    //     'Warehouse',
+    //     'Accounting',
+    //     'Human resource',
+    //     'Production',
+    //     'Cash flow',
+    //     'Vendor management',
+    //     'Hotel management',
+    //     'Payment and Receivable'
+    //   ]
+    // },
+    // {
+    //   icon: Search,
+    //   title: 'Research Services',
+    //   description: 'Data and insights to support your business and marketing strategies.',
+    //   categories: [
+    //     'Market opportunity identification',
+    //     'Customer targeting research',
+    //     'Product and service design research',
+    //     'Competitor analysis',
+    //     'Marketing strategy development',
+    //     'Pricing research',
+    //     'Promotional strategy research',
+    //     'Business intelligence'
+    //   ]
+    // },
     {
       icon: Shield,
       title: 'Regulatory Compliance, Certification & Audit Services',

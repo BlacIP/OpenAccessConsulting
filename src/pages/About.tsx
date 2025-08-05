@@ -4,7 +4,7 @@ import MissionSection from '../components/about/MissionSection';
 import VisionSection from '../components/about/VisionSection';
 import WhoWeAreSection from '../components/about/WhoWeAreSection';
 import ValuesSection from '../components/about/ValuesSection';
-import TeamSection from '../components/about/TeamSection';
+// import TeamSection from '../components/about/TeamSection';
 
 const About = () => {
   return (
@@ -14,7 +14,7 @@ const About = () => {
       <VisionSection />
       <WhoWeAreSection />
       <ValuesSection />
-      <TeamSection />
+      {/* <TeamSection /> */}
     </div>
   );
 };
