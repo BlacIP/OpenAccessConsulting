@@ -20,9 +20,9 @@ const ContactForm = () => {
     'Expatriate & Immigration Services',
     'Business Support Solutions',
     'Human Resource Services',
-    'Business Management',
-    'Organisation & Process Improvement',
-    'Research Services',
+    // 'Business Management',
+    // 'Organisation & Process Improvement',
+    // 'Research Services',
     'Other',
   ];
 
