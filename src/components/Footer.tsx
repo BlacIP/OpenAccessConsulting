@@ -40,11 +40,14 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><a href="#" className="hover:text-white transition-colors">HR Strategy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Talent Management</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Employee Relations</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Recruitment Service</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Employee Verification</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Outsourcing Services</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Training & Development</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Compliance</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Expatriate & Immigration Services</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Pre-Employment Tests</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Human Resource Services</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Regulatory Compliance, Certification & Audit Services</a></li>
             </ul>
           </div>
 
@@ -83,7 +86,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2024 OPENACCESS CONSULTING. All rights reserved.</p>
+          <p>&copy; 2025 OPENACCESS CONSULTING. All rights reserved.</p>
         </div>
       </div>
     </footer>

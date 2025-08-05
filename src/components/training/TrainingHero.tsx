@@ -7,7 +7,7 @@ const TrainingHero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-28">
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-white">
-            2025 Intensive Hands-On HR Training
+            Intensive Hands-On HR Training
           </h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-4">
             Are you an aspiring or practicing HR professional looking to bridge the gap between theory and real-life HR practice? 
@@ -20,13 +20,13 @@ const TrainingHero = () => {
         </div>
 
         {/* Training Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-16">
-          <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          {/* <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
             <Calendar className="h-12 w-12 text-white mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Start Date</h3>
             <p className="text-blue-100">2nd August, 2025</p>
             <p className="text-sm text-blue-200">Saturday Only</p>
-          </div>
+          </div> */}
           <div className="bg-white/10 backdrop-blur p-8 rounded-xl text-center">
             <Clock className="h-12 w-12 text-white mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Time</h3>
