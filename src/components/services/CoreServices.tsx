@@ -1193,7 +1193,7 @@ const CoreServices = () => {
               onClick={() => setSelectedService(service)}
               className="text-blue-600 font-medium hover:text-blue-700 transition-colors inline-flex items-center group"
             >
-              {service.detailedContent ? 'Read More' : '+ more services'}
+              {service['detailedContent'] ? 'Read More' : 'Read More'}
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
