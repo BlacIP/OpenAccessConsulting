@@ -10,7 +10,7 @@ const Header = () => {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About us' },
     { path: '/services', label: 'Our services' },
-    { path: '/gallery', label: 'Gallery' },
+    // { path: '/gallery', label: 'Gallery' },
     { path: '/contact', label: 'Contact' },
     { path: '/enroll-for-training', label: 'Enroll for Training', isCTA: true },
   ];
@@ -39,7 +39,7 @@ const Header = () => {
             <img
               src="/Logo/black.png"
               alt="OpenAccess Consulting"
-              className="h-10 w-auto"
+              className="h-8 w-auto"
             />
           </Link>
 

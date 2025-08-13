@@ -6,7 +6,7 @@ import Landing from './pages/Landing';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
-import Gallery from './pages/Gallery';
+// import Gallery from './pages/Gallery';
 import EnrollForTraining from './pages/EnrollForTraining';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/gallery" element={<Gallery />} />
+            {/* <Route path="/gallery" element={<Gallery />} /> */}
             <Route path="/enroll-for-training" element={<EnrollForTraining />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
