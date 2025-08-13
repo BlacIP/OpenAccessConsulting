@@ -12,7 +12,7 @@ const Footer = () => {
               <img
                 src="/Logo/Open-Access-consult-Logo.png"
                 alt="OpenAccess Consulting"
-                className="h-12 w-auto"
+                className="h-auto w-60"
               />
             </div>
             <p className="text-gray-300 text-sm leading-6">

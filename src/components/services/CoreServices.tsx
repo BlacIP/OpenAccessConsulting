@@ -198,8 +198,8 @@ const CoreServices = () => {
       detailedContent: (
         <div className="space-y-6">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Employee Verification Services</h3>
-            <p className="text-lg text-blue-600 font-semibold">Protect Your Business. Hire with Confidence – Nationwide Coverage.</p>
+            <h4 className="text-2xl font-bold text-gray-900 mb-2">Protect Your Business. <br />Hire with Confidence – Nationwide Coverage</h4>
+            {/* <p className="text-lg text-blue-600 font-semibold">Protect Your Business. Hire with Confidence – Nationwide Coverage.</p> */}
           </div>
           
           <p className="text-gray-700 leading-relaxed">
@@ -339,8 +339,8 @@ const CoreServices = () => {
       detailedContent: (
         <div className="space-y-6">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Employee Outsourcing Services</h3>
-            <p className="text-lg text-blue-600 font-semibold">Let Openaccess Consulting Handle Your Workforce, While You Focus on Growth.</p>
+            <h4 className="text-2xl font-bold text-gray-900 mb-2">Let Openaccess Consulting Handle Your Workforce, <br /> While You Focus on Growth</h4>
+            {/* <p className="text-lg text-blue-600 font-semibold">Let Openaccess Consulting Handle Your Workforce, While You Focus on Growth.</p> */}
           </div>
           
           <div className="bg-blue-50 p-6 rounded-lg">
@@ -483,8 +483,8 @@ const CoreServices = () => {
       detailedContent: (
         <div className="space-y-6">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Employee Training & Development</h3>
-            <p className="text-lg text-blue-600 font-semibold">Empowering Your People. Elevating Your Business.</p>
+            <h4 className="text-2xl font-bold text-gray-900 mb-2">Empowering Your People. Elevating Your Business</h4>
+            {/* <p className="text-lg text-blue-600 font-semibold">Empowering Your People. Elevating Your Business.</p> */}
           </div>
           
           <p className="text-gray-700 leading-relaxed">
@@ -651,8 +651,8 @@ const CoreServices = () => {
       detailedContent: (
         <div className="space-y-6">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Expatriate & Immigration Services</h3>
-            <p className="text-lg text-blue-600 font-semibold">Seamless Immigration Support for Global Talent and Operations</p>
+            <h4 className="text-2xl font-bold text-gray-900 mb-2">Seamless Immigration Support for Global Talent and Operations</h4>
+            {/* <p className="text-lg text-blue-600 font-semibold">Seamless Immigration Support for Global Talent and Operations</p> */}
           </div>
           
           <p className="text-gray-700 leading-relaxed">
@@ -830,9 +830,9 @@ const CoreServices = () => {
       detailedContent: (
         <div className="space-y-6">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Human Resource Services</h3>
-            <p className="text-lg text-blue-600 font-semibold">Complete HR Solutions to Optimize and Manage Your Workforce</p>
-            <p className="text-sm text-gray-600 mt-2">Delivered by Openaccess</p>
+            <h4 className="text-2xl font-bold text-gray-900 mb-2">Complete HR Solutions to Optimize and Manage Your Workforce</h4>
+            {/* <p className="text-lg text-blue-600 font-semibold">Complete HR Solutions to Optimize and Manage Your Workforce</p> */}
+            {/* <p className="text-sm text-gray-600 mt-2">Delivered by Openaccess</p> */}
           </div>
           
           <p className="text-gray-700 leading-relaxed">
@@ -997,9 +997,9 @@ const CoreServices = () => {
       detailedContent: (
         <div className="space-y-6">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Regulatory Compliance, Certification & Audit Services</h3>
-            <p className="text-lg text-blue-600 font-semibold">Ensure Compliance. Gain Certification. Operate with Confidence.</p>
-            <p className="text-sm text-gray-600 mt-2">Delivered by Openaccess Consulting</p>
+            <h4 className="text-2xl font-bold text-gray-900 mb-2">Ensure Compliance. Gain Certification. Operate with Confidence</h4>
+            {/* <p className="text-lg text-blue-600 font-semibold">Ensure Compliance. Gain Certification. Operate with Confidence.</p> */}
+            {/* <p className="text-sm text-gray-600 mt-2">Delivered by Openaccess Consulting</p> */}
           </div>
           
           <p className="text-gray-700 leading-relaxed">
