@@ -436,7 +436,7 @@ const CoreServices = () => {
           </div>
 
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">📈 Use Cases & Sectors We Serve</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">📈 Use Cases & Sector We Serve</h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {['Manufacturing', 'FMCG', 'Telecommunications', 'Hospitality', 'Logistics & Transport', 'Oil & Gas', 'Construction', 'Financial Services'].map((sector, index) => (
                 <div key={index} className="bg-white p-3 rounded text-center text-sm font-medium text-gray-700">
