@@ -18,7 +18,17 @@ export default defineConfig(({ mode }) => {
 
   return {
     base: basePath,
-    plugins: [react()],
+    plugins: [
+      react(),
+      // Keep the staging copy out of search engines
+      {
+        name: 'staging-noindex',
+        transformIndexHtml: (html) =>
+          mode === 'staging'
+            ? html.replace('</head>', '    <meta name="robots" content="noindex, nofollow" />\n  </head>')
+            : html,
+      },
+    ],
     optimizeDeps: { exclude: ['lucide-react'] },
   };
 });
