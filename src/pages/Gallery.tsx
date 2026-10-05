@@ -1,4 +1,3 @@
-import React from 'react';
 import GalleryHero from '../components/gallery/GalleryHero';
 import EventHighlights from '../components/gallery/EventHighlights';
 import PhotoGallery from '../components/gallery/PhotoGallery';

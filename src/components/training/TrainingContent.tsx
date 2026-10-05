@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRight, CheckCircle, Download } from 'lucide-react';
 
 const TrainingContent = () => {

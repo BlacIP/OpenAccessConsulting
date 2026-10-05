@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Users, Shield, Globe, BookOpen } from 'lucide-react';
 

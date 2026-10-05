@@ -1,4 +1,3 @@
-import React from 'react';
 import { Users, MapPin, Award } from 'lucide-react';
 
 const EventHighlights = () => {

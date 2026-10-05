@@ -1,4 +1,3 @@
-import React from 'react';
 import HeroSection from '../components/landing/HeroSection';
 import ClientLogos from '../components/landing/ClientLogos';
 import ServicesSection from '../components/landing/ServicesSection';

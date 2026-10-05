@@ -259,7 +259,7 @@ The new design depends on proof. Without these items, sections 5.2 #7, 5.4 and 5
 
 | Phase | Scope | Rough effort |
 |-------|-------|--------------|
-| **0 · Quick wins** | Fix title typo + favicon, meta description, Pre-Employment copy bug, dead footer links, remove emoji, aria-labels, compress images, switch the form from `mailto:` to Formspree, staging `noindex`, bump GitHub Actions versions (staging blank-page fix ✅ done) | 1–2 days |
+| **0 · Quick wins** | ✅ Staging blank-page fix · ✅ title typo, favicon, meta description + OG tags · ✅ Pre-Employment copy bug · ✅ dead footer links (social icons removed until real URLs exist) · ✅ emoji removed · ✅ aria-labels + accessible service modal (Esc, click-outside, scroll lock) · ✅ photos resized (−66%) with width/height · ✅ staging `noindex` · ✅ GitHub Actions v4 / Node 22 / pinned runner · ✅ typecheck + lint clean · ⏳ contact form → Formspree (**needs a Formspree form ID**) | 1–2 days |
 | **1 · Foundations + Home** | Tokens, shared components, header with mega-menu, footer, full home page with artifacts | ~1 week |
 | **2 · Services** | Content moved to data, `/services` index, 8 service pages, FAQs | ~1 week |
 | **3 · Training, About, Contact** | Course-page layout, About rebuild, contact-sales layout | 3–4 days |

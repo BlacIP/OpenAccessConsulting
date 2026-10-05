@@ -1,5 +1,4 @@
-import React from 'react';
-import { Calendar, Clock, Users, Award } from 'lucide-react';
+import { Clock, Users, Award } from 'lucide-react';
 
 const TrainingHero = () => {
   return (

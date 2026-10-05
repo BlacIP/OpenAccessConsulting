@@ -1,4 +1,3 @@
-import React from 'react';
 import TrainingHero from '../components/training/TrainingHero';
 import TrainingContent from '../components/training/TrainingContent';
 import WhyChooseTraining from '../components/training/WhyChooseTraining';

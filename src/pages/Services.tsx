@@ -1,4 +1,3 @@
-import React from 'react';
 import ServicesHero from '../components/services/ServicesHero';
 import CoreServices from '../components/services/CoreServices';
 import ProcessSection from '../components/services/ProcessSection';

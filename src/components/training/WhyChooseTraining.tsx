@@ -1,4 +1,3 @@
-import React from 'react';
 import { Users, Award, CheckCircle } from 'lucide-react';
 
 const WhyChooseTraining = () => {
