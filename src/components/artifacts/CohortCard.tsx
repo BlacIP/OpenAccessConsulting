@@ -1,15 +1,18 @@
 import { CalendarDays, Clock3, MonitorPlay } from 'lucide-react';
 import { training, trainingEnrolUrl } from '../../content/site';
 import Button from '../ui/Button';
+import { track } from '../../lib/analytics';
 
 type CohortCardProps = {
   /** Show real actions; the decorative hero copy leaves them out */
   interactive?: boolean;
+  /** Link to the programme page (off when already on it) */
+  programmeLink?: boolean;
   compact?: boolean;
   className?: string;
 };
 
-const CohortCard = ({ interactive = false, compact = false, className = '' }: CohortCardProps) => (
+const CohortCard = ({ interactive = false, programmeLink = true, compact = false, className = '' }: CohortCardProps) => (
   <div className={`rounded-2xl bg-white shadow-elevated ring-1 ring-black/5 ${compact ? 'p-4' : 'p-6'} ${className}`}>
     <div className="flex items-center justify-between gap-3">
       <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">
@@ -40,12 +43,18 @@ const CohortCard = ({ interactive = false, compact = false, className = '' }: Co
 
     {interactive && (
       <div className="mt-6 flex flex-col gap-3">
-        <Button href={trainingEnrolUrl} className="w-full">
+        <Button href={trainingEnrolUrl} onClick={() => track('enroll_click', { location: 'cohort_card' })} className="w-full">
           Enroll now
         </Button>
-        <Button to="/enroll-for-training" variant="secondary" className="w-full">
-          See the programme
-        </Button>
+        {programmeLink ? (
+          <Button to="/training" variant="secondary" className="w-full">
+            See the programme
+          </Button>
+        ) : (
+          <Button to="/contact" variant="secondary" className="w-full">
+            Ask a question
+          </Button>
+        )}
       </div>
     )}
   </div>

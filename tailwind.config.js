@@ -24,8 +24,6 @@ export default {
       },
       colors: {
         brand,
-        // Legacy pages still use `blue-*`; alias it to the brand scale until they are rebuilt (Phase 3)
-        blue: brand,
         ink: {
           DEFAULT: '#0B1F3A',
           900: '#0B1F3A',

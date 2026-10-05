@@ -6,7 +6,7 @@ import Container from '../ui/Container';
 
 const companyLinks = [
   { to: '/about', label: 'About us' },
-  { to: '/enroll-for-training', label: 'HR Training' },
+  { to: '/training', label: 'HR Training' },
   { to: '/contact', label: 'Contact' },
   { to: '/contact', label: 'Book a consultation' },
 ];

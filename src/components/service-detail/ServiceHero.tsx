@@ -44,7 +44,7 @@ const ServiceHero = ({ service, pillar, detail }: ServiceHeroProps) => (
         {detail.body && <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-slate-500">{detail.body}</p>}
 
         <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
-          <Button to="/contact">Book a consultation</Button>
+          <Button to={`/contact?service=${service.slug}`}>Book a consultation</Button>
           <Button href={contact.phoneHref} variant="link">
             Call {contact.phoneDisplay}
           </Button>

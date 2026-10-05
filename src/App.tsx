@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import ScrollToTop from './components/layout/ScrollToTop';
@@ -8,7 +8,7 @@ import Contact from './pages/Contact';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
 // import Gallery from './pages/Gallery';
-import EnrollForTraining from './pages/EnrollForTraining';
+import Training from './pages/Training';
 
 function App() {
   return (
@@ -23,7 +23,9 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
             {/* <Route path="/gallery" element={<Gallery />} /> */}
-            <Route path="/enroll-for-training" element={<EnrollForTraining />} />
+            <Route path="/training" element={<Training />} />
+            {/* Old address, kept so shared links still work */}
+            <Route path="/enroll-for-training" element={<Navigate to="/training" replace />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

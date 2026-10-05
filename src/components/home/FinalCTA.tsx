@@ -3,14 +3,20 @@ import Container from '../ui/Container';
 import Button from '../ui/Button';
 import Reveal from '../ui/Reveal';
 
+type Action = { label: string; to?: string; href?: string };
+
 type FinalCTAProps = {
   title?: string;
   text?: string;
+  primary?: Action;
+  secondary?: Action;
 };
 
 const FinalCTA = ({
   title = 'Let’s talk about your team.',
   text = 'Book a free consultation and we’ll map out the right hiring, training or compliance support for your business.',
+  primary = { label: 'Book a consultation', to: '/contact' },
+  secondary = { label: `Or call ${contact.phoneDisplay}`, href: contact.phoneHref },
 }: FinalCTAProps) => (
   <section className="pb-20 lg:pb-28">
     <Container>
@@ -20,11 +26,11 @@ const FinalCTA = ({
             <h2 className="text-h2 text-white">{title}</h2>
             <p className="mt-4 text-lead text-white/80">{text}</p>
             <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
-              <Button to="/contact" variant="inverse" arrow>
-                Book a consultation
+              <Button to={primary.to} href={primary.href} variant="inverse" arrow>
+                {primary.label}
               </Button>
-              <Button href={contact.phoneHref} variant="link-inverse">
-                Or call {contact.phoneDisplay}
+              <Button to={secondary.to} href={secondary.href} variant="link-inverse">
+                {secondary.label}
               </Button>
             </div>
           </div>

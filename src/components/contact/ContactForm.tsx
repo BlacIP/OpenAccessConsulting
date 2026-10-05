@@ -1,194 +1,237 @@
-import React, { useState } from 'react';
-import { Send, CheckCircle } from 'lucide-react';
+import { useRef, useState, type ChangeEvent, type FocusEvent, type FormEvent } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
+import { services } from '../../content/services';
+import { contact } from '../../content/site';
+import { track } from '../../lib/analytics';
+
+const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
+
+type Fields = {
+  name: string;
+  email: string;
+  company: string;
+  phone: string;
+  service: string;
+  message: string;
+};
+type FieldName = keyof Fields;
+type Status = 'idle' | 'submitting' | 'success' | 'error';
+
+const serviceOptions = [...services.map((s) => s.title), 'HR Training', 'Other'];
+
+const validate = (name: FieldName, value: string) => {
+  if (name === 'name' && !value.trim()) return 'Please enter your name.';
+  if (name === 'email') {
+    if (!value.trim()) return 'Please enter your email address.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return 'Please enter a valid email address, e.g. name@company.com.';
+  }
+  if (name === 'message' && value.trim().length < 10) return 'Please tell us a little about what you need (at least 10 characters).';
+  return '';
+};
+
+const required: FieldName[] = ['name', 'email', 'message'];
+
+const inputClass = (invalid: boolean) =>
+  `block w-full rounded-lg border bg-white px-3.5 py-3 text-[15px] text-ink placeholder:text-slate-400 transition-colors focus:outline-none focus:ring-2 ${
+    invalid ? 'border-red-400 focus:border-red-500 focus:ring-red-200' : 'border-line focus:border-brand-600 focus:ring-brand-100'
+  }`;
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    service: '',
-    message: '',
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [params] = useSearchParams();
+  const preselected = services.find((s) => s.slug === params.get('service'))?.title ?? (params.get('service') === 'training' ? 'HR Training' : '');
 
-  const services = [
-    'Recruitment Services',
-    'Employee Verification',
-    'Outsourcing Services',
-    'Training & Development',
-    'Expatriate & Immigration Services',
-    'Business Support Solutions',
-    'Human Resource Services',
-    // 'Business Management',
-    // 'Organisation & Process Improvement',
-    // 'Research Services',
-    'Other',
-  ];
+  const [fields, setFields] = useState<Fields>({ name: '', email: '', company: '', phone: '', service: preselected, message: '' });
+  const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({});
+  const [status, setStatus] = useState<Status>('idle');
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFields((f) => ({ ...f, [name]: value }));
+    // Clear an error as soon as it's fixed
+    if (errors[name as FieldName] && !validate(name as FieldName, value)) setErrors((er) => ({ ...er, [name]: '' }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const onBlur = (e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    if (required.includes(name as FieldName)) setErrors((er) => ({ ...er, [name]: validate(name as FieldName, value) }));
+  };
+
+  const sendViaEmailClient = () => {
+    const body = [
+      `Name: ${fields.name}`,
+      `Email: ${fields.email}`,
+      `Company: ${fields.company || 'Not specified'}`,
+      `Phone: ${fields.phone || 'Not specified'}`,
+      `Service: ${fields.service || 'Not specified'}`,
+      '',
+      fields.message,
+    ].join('\n');
+    window.location.href = `mailto:${contact.email}?cc=${contact.emailAlt}&subject=${encodeURIComponent(
+      `Enquiry from ${fields.name}`,
+    )}&body=${encodeURIComponent(body)}`;
+  };
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    const emailBody = `
-Hello,
+    const next = Object.fromEntries(required.map((n) => [n, validate(n, fields[n])])) as Partial<Record<FieldName, string>>;
+    setErrors(next);
+    const firstInvalid = required.find((n) => next[n]);
+    if (firstInvalid) {
+      formRef.current?.querySelector<HTMLElement>(`[name="${firstInvalid}"]`)?.focus();
+      return;
+    }
 
-I would like to inquire about your services. Please find my details below:
+    // Spam honeypot: real people never fill this in
+    const honeypot = new FormData(e.currentTarget).get('_gotcha');
+    if (honeypot) return;
 
-Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company || 'Not specified'}
-Phone: ${formData.phone || 'Not specified'}
-Service Interest: ${formData.service || 'Not specified'}
+    track('generate_lead', { form: 'contact', service: fields.service || 'none' });
 
-Message:
-${formData.message}
+    if (!FORMSPREE_ID) {
+      sendViaEmailClient();
+      setStatus('success');
+      return;
+    }
 
-Best regards,
-${formData.name}
-    `.trim();
-
-    const subject = `Service Inquiry from ${formData.name}`;
-    const mailtoUrl = `mailto:info@openaccessconsult.com?cc=openaccessconsulting@gmail.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-    
-    window.location.href = mailtoUrl;
-    
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setStatus('submitting');
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...fields, _subject: `Website enquiry from ${fields.name}` }),
+      });
+      setStatus(res.ok ? 'success' : 'error');
+    } catch {
+      setStatus('error');
+    }
   };
+
+  if (status === 'success') {
+    return (
+      <div role="status" className="flex flex-col items-start rounded-2xl border border-line bg-white p-8 shadow-card">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-success">
+          <CheckCircle2 className="h-6 w-6" />
+        </span>
+        <h2 className="mt-5 text-2xl font-semibold tracking-tight text-ink">
+          {FORMSPREE_ID ? 'Thanks, your message is on its way.' : 'Your email is ready to send.'}
+        </h2>
+        <p className="mt-3 text-[15px] leading-relaxed text-slate-600">
+          {FORMSPREE_ID
+            ? 'Our team will get back to you to arrange your free consultation.'
+            : 'We’ve opened your email app with your message filled in. Press send to reach us.'}{' '}
+          Prefer to talk? Call{' '}
+          <a href={contact.phoneHref} className="font-semibold text-brand-600">
+            {contact.phoneDisplay}
+          </a>
+          .
+        </p>
+      </div>
+    );
+  }
+
+  const field = (name: FieldName, label: string, opts: { type?: string; autoComplete?: string; optional?: boolean } = {}) => (
+    <div>
+      <label htmlFor={name} className="block text-sm font-medium text-ink">
+        {label} {opts.optional && <span className="font-normal text-slate-400">(optional)</span>}
+      </label>
+      <input
+        id={name}
+        name={name}
+        type={opts.type ?? 'text'}
+        autoComplete={opts.autoComplete}
+        value={fields[name]}
+        onChange={onChange}
+        onBlur={onBlur}
+        aria-invalid={!!errors[name]}
+        aria-describedby={errors[name] ? `${name}-error` : undefined}
+        required={!opts.optional}
+        className={`mt-1.5 ${inputClass(!!errors[name])}`}
+      />
+      {errors[name] && (
+        <p id={`${name}-error`} className="mt-1.5 text-sm text-red-600">
+          {errors[name]}
+        </p>
+      )}
+    </div>
+  );
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-8">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">
-        Send Us a Message
-      </h2>
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-              Full Name *
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              value={formData.name}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
-              placeholder="Your full name"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-              Email Address *
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              value={formData.email}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
-              placeholder="your.email@company.com"
-            />
-          </div>
-        </div>
+    <form ref={formRef} onSubmit={onSubmit} noValidate className="rounded-2xl border border-line bg-white p-6 shadow-card sm:p-8">
+      <h2 className="text-xl font-semibold tracking-tight text-ink">Send us a message</h2>
+      <p className="mt-1 text-sm text-slate-500">Fields marked optional can be left blank.</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-              Company Name
-            </label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              value={formData.company}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
-              placeholder="Your company name"
-            />
-          </div>
-          <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
-              placeholder="08066861023"
-            />
-          </div>
+      {status === 'error' && (
+        <div role="alert" className="mt-5 flex gap-3 rounded-lg bg-red-50 p-4 text-sm text-red-700">
+          <AlertCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
+          <p>
+            Something went wrong sending your message. Please try again, or email us at{' '}
+            <a href={`mailto:${contact.email}`} className="font-semibold underline">
+              {contact.email}
+            </a>
+            .
+          </p>
         </div>
+      )}
 
-        <div>
-          <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-            Service Interest
+      <div className="mt-6 grid gap-5 sm:grid-cols-2">
+        {field('name', 'Full name', { autoComplete: 'name' })}
+        {field('email', 'Work email', { type: 'email', autoComplete: 'email' })}
+        {field('company', 'Company', { autoComplete: 'organization', optional: true })}
+        {field('phone', 'Phone', { type: 'tel', autoComplete: 'tel', optional: true })}
+
+        <div className="sm:col-span-2">
+          <label htmlFor="service" className="block text-sm font-medium text-ink">
+            What can we help with? <span className="font-normal text-slate-400">(optional)</span>
           </label>
-          <select
-            id="service"
-            name="service"
-            value={formData.service}
-            onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
-          >
+          <select id="service" name="service" value={fields.service} onChange={onChange} className={`mt-1.5 ${inputClass(false)}`}>
             <option value="">Select a service</option>
-            {services.map((service) => (
-              <option key={service} value={service}>
-                {service}
+            {serviceOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
               </option>
             ))}
           </select>
         </div>
 
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-            Message *
+        <div className="sm:col-span-2">
+          <label htmlFor="message" className="block text-sm font-medium text-ink">
+            Message
           </label>
           <textarea
             id="message"
             name="message"
+            rows={5}
+            value={fields.message}
+            onChange={onChange}
+            onBlur={onBlur}
             required
-            rows={6}
-            value={formData.message}
-            onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors resize-none"
-            placeholder="Tell us about your business needs and how we can help..."
-          ></textarea>
-        </div>
-
-        <button
-          type="submit"
-          disabled={isSubmitted}
-          className="w-full bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center group disabled:opacity-50"
-        >
-          {isSubmitted ? (
-            <>
-              <CheckCircle className="h-5 w-5 mr-2" />
-              Opening Email Client...
-            </>
-          ) : (
-            <>
-              Send Message
-              <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </>
+            aria-invalid={!!errors.message}
+            aria-describedby={errors.message ? 'message-error' : undefined}
+            placeholder="Tell us about your team and what you need."
+            className={`mt-1.5 resize-y ${inputClass(!!errors.message)}`}
+          />
+          {errors.message && (
+            <p id="message-error" className="mt-1.5 text-sm text-red-600">
+              {errors.message}
+            </p>
           )}
-        </button>
-      </form>
-    </div>
+        </div>
+      </div>
+
+      {/* Honeypot, hidden from people and assistive tech */}
+      <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+
+      <button
+        type="submit"
+        disabled={status === 'submitting'}
+        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-600 px-5 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        {status === 'submitting' && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
+        {status === 'submitting' ? 'Sending…' : 'Send message'}
+      </button>
+    </form>
   );
 };
 
