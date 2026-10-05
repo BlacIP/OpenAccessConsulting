@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
@@ -27,6 +26,9 @@ const TrainingHighlight = () => {
             <img
               src={`${import.meta.env.BASE_URL}training.jpg`}
               alt="Training session"
+              width={1600}
+              height={1066}
+              loading="lazy"
               className="rounded-xl shadow-2xl"
             />
           </div>

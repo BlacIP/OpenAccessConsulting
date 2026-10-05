@@ -1,4 +1,3 @@
-import React from 'react';
 
 const AboutHero = () => {
   return (
@@ -28,6 +27,8 @@ const AboutHero = () => {
             <img
               src={`${import.meta.env.BASE_URL}aboutus-page.jpg`} 
               alt="HR consulting team"
+              width={1600}
+              height={1066}
               className="rounded-xl shadow-2xl"
             />
           </div>

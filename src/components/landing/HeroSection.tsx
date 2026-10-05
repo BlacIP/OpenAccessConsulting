@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Calendar } from 'lucide-react';
 
@@ -48,6 +47,8 @@ const HeroSection = () => {
             <img
               src={`${import.meta.env.BASE_URL}landing-page.jpg`}
               alt="Professional team meeting"
+              width={1600}
+              height={900}
               className="rounded-2xl shadow-2xl"
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl z-20">
