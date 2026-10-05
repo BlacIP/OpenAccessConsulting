@@ -1,5 +1,23 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Mail, Phone, MapPin } from 'lucide-react';
+
+const services = [
+  'Recruitment Service',
+  'Employee Verification',
+  'Outsourcing Services',
+  'Training & Development',
+  'Expatriate & Immigration Services',
+  'Pre-Employment Tests',
+  'Human Resource Services',
+  'Regulatory Compliance, Certification & Audit Services',
+];
+
+const trainingPrograms = [
+  'Annual HR Conference',
+  'Leadership Development',
+  'HR Certification',
+  'Workshops',
+];
 
 const Footer = () => {
   return (
@@ -10,7 +28,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img
-                src="/Logo/Open-Access-consult-Logo.png"
+                src={`${import.meta.env.BASE_URL}Logo/Open-Access-consult-Logo.png`}
                 alt="OpenAccess Consulting"
                 className="h-auto w-60"
               />
@@ -18,36 +36,18 @@ const Footer = () => {
             <p className="text-gray-300 text-sm leading-6">
               Empowering organizations through strategic HR consulting and professional development training.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-300 hover:text-white transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-white transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-            </div>
+            {/* TODO: add LinkedIn / X / Instagram icons once the real profile URLs are available */}
           </div>
 
           {/* Services */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><a href="#" className="hover:text-white transition-colors">Recruitment Service</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Employee Verification</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Outsourcing Services</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Training & Development</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Expatriate & Immigration Services</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Pre-Employment Tests</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Human Resource Services</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Regulatory Compliance, Certification & Audit Services</a></li>
+              {services.map((service) => (
+                <li key={service}>
+                  <Link to="/services" className="hover:text-white transition-colors">{service}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -55,10 +55,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Training Programs</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><a href="#" className="hover:text-white transition-colors">Annual HR Conference</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Leadership Development</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">HR Certification</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Workshops</a></li>
+              {trainingPrograms.map((program) => (
+                <li key={program}>
+                  <Link to="/enroll-for-training" className="hover:text-white transition-colors">{program}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -69,13 +70,13 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4" />
                 <div>
-                  <div>info@openaccessconsult.com</div>
-                  <div>openaccessconsulting@gmail.com</div>
+                  <a href="mailto:info@openaccessconsult.com" className="block hover:text-white transition-colors">info@openaccessconsult.com</a>
+                  <a href="mailto:openaccessconsulting@gmail.com" className="block hover:text-white transition-colors">openaccessconsulting@gmail.com</a>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4" />
-                <span>08066861023</span>
+                <a href="tel:+2348066861023" className="hover:text-white transition-colors">08066861023</a>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4" />
@@ -86,7 +87,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2025 OPENACCESS CONSULTING. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} OPENACCESS CONSULTING. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Users, 
@@ -9,13 +9,36 @@ import {
   BookOpen,
   Building,
   Globe,
-  X
+  X,
+  type LucideIcon
 } from 'lucide-react';
 
-const CoreServices = () => {
-  const [selectedService, setSelectedService] = useState<any>(null);
+type CoreService = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  categories: string[];
+  detailedContent?: ReactNode;
+};
 
-  const coreServices = [
+const CoreServices = () => {
+  const [selectedService, setSelectedService] = useState<CoreService | null>(null);
+
+  // Close on Escape and lock background scroll while the modal is open
+  useEffect(() => {
+    if (!selectedService) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedService(null);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [selectedService]);
+
+  const coreServices: CoreService[] = [
     {
       icon: Users,
       title: 'Recruitment Service',
@@ -40,7 +63,7 @@ const CoreServices = () => {
           </p>
 
           <div className="bg-blue-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">🎯 What We Offer</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">What We Offer</h4>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-1" />
@@ -82,7 +105,7 @@ const CoreServices = () => {
           </div>
 
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">💼 Our Process</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">Our Process</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
@@ -128,7 +151,7 @@ const CoreServices = () => {
           </div>
 
           <div className="border-l-4 border-red-500 bg-red-50 p-4 rounded">
-            <h4 className="text-lg font-semibold text-red-800 mb-2">📊 Why Recruitment Matters to Your Business</h4>
+            <h4 className="text-lg font-semibold text-red-800 mb-2">Why Recruitment Matters to Your Business</h4>
             <p className="text-red-700 mb-2">Without the right talent:</p>
             <ul className="text-red-700 space-y-1 ml-4">
               <li>• Productivity drops</li>
@@ -140,7 +163,7 @@ const CoreServices = () => {
           </div>
 
           <div className="bg-blue-600 text-white p-6 rounded-lg">
-            <h4 className="text-xl font-semibold mb-4">🧠 Why Choose Openaccess Consulting?</h4>
+            <h4 className="text-xl font-semibold mb-4">Why Choose Openaccess Consulting?</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
@@ -174,9 +197,9 @@ const CoreServices = () => {
           </div>
 
           <div className="text-center bg-gray-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-2">🚀 Let's Build Your Dream Team</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-2">Let's Build Your Dream Team</h4>
             <p className="text-gray-700 mb-4">Whether you're hiring one staff or scaling up by 100, Openaccess Consulting is your strategic partner in talent acquisition.</p>
-            <p className="text-blue-600 font-semibold">📞 Contact us today to schedule a FREE Recruitment Needs Consultation.</p>
+            <p className="text-blue-600 font-semibold">Contact us today to schedule a FREE Recruitment Needs Consultation.</p>
           </div>
         </div>
       )
@@ -273,7 +296,7 @@ const CoreServices = () => {
           </div>
 
           <div className="bg-blue-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">🔎 Methodology</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">Methodology</h4>
             <p className="text-gray-700 mb-3">We carry out our checks through the following, but not limited to:</p>
             <ul className="space-y-2 text-gray-700">
               <li className="flex items-start space-x-2">
@@ -344,7 +367,7 @@ const CoreServices = () => {
           </div>
           
           <div className="bg-blue-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">🌟 Why Employee Outsourcing?</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">Why Employee Outsourcing?</h4>
             <p className="text-gray-700 leading-relaxed">
               In today's dynamic business environment, companies need the flexibility to scale up or down without being weighed down by the complexities of HR operations. That's where Openaccess Consulting comes in.
             </p>
@@ -354,7 +377,7 @@ const CoreServices = () => {
           </div>
 
           <div className="bg-white border border-gray-200 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">✅ What We Offer</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">What We Offer</h4>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <div className="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">1</div>
@@ -396,7 +419,7 @@ const CoreServices = () => {
           </div>
 
           <div className="bg-blue-600 text-white p-6 rounded-lg">
-            <h4 className="text-xl font-semibold mb-4">💡 Why Businesses Choose Openaccess</h4>
+            <h4 className="text-xl font-semibold mb-4">Why Businesses Choose Openaccess</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-3">
                 <div className="flex items-start space-x-2">
@@ -436,7 +459,7 @@ const CoreServices = () => {
           </div>
 
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">📈 Use Cases & Sector We Serve</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">Use Cases & Sector We Serve</h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {['Manufacturing', 'FMCG', 'Telecommunications', 'Hospitality', 'Logistics & Transport', 'Oil & Gas', 'Construction', 'Financial Services'].map((sector, index) => (
                 <div key={index} className="bg-white p-3 rounded text-center text-sm font-medium text-gray-700">
@@ -447,7 +470,7 @@ const CoreServices = () => {
           </div>
 
           <div className="border-l-4 border-red-500 bg-red-50 p-4 rounded">
-            <h4 className="text-lg font-semibold text-red-800 mb-2">📊 Risk of Not Outsourcing Right</h4>
+            <h4 className="text-lg font-semibold text-red-800 mb-2">Risk of Not Outsourcing Right</h4>
             <ul className="text-red-700 space-y-1">
               <li>• High employee turnover and hiring costs</li>
               <li>• Legal exposure from mismanaged HR practices</li>
@@ -458,7 +481,7 @@ const CoreServices = () => {
           </div>
 
           <div className="text-center bg-gray-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-2">🛡️ Choose Openaccess Consulting — Your HR Partner</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-2">Choose Openaccess Consulting — Your HR Partner</h4>
             <p className="text-gray-700 mb-2">
               With Openaccess as your outsourcing partner, you gain peace of mind, better workforce control, and the agility to grow faster and leaner.
             </p>
@@ -492,11 +515,11 @@ const CoreServices = () => {
           </p>
           
           <div className="bg-blue-50 p-4 rounded-lg">
-            <p className="text-blue-800 font-medium">⚙️ All training can be delivered in-house or at a location of your choice, depending on your operational needs and preferences.</p>
+            <p className="text-blue-800 font-medium">All training can be delivered in-house or at a location of your choice, depending on your operational needs and preferences.</p>
           </div>
 
           <div className="space-y-6">
-            <h4 className="text-xl font-semibold text-gray-900">✅ Training Categories & Topics</h4>
+            <h4 className="text-xl font-semibold text-gray-900">Training Categories & Topics</h4>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white border border-gray-200 p-5 rounded-lg">
@@ -584,7 +607,7 @@ const CoreServices = () => {
           </div>
 
           <div className="bg-blue-600 text-white p-6 rounded-lg">
-            <h4 className="text-xl font-semibold mb-4">🧠 Delivery Approach</h4>
+            <h4 className="text-xl font-semibold mb-4">Delivery Approach</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
@@ -614,7 +637,7 @@ const CoreServices = () => {
           </div>
 
           <div className="border-l-4 border-red-500 bg-red-50 p-4 rounded">
-            <h4 className="text-lg font-semibold text-red-800 mb-2">🚨 The Risk of Not Investing in Employee Training</h4>
+            <h4 className="text-lg font-semibold text-red-800 mb-2">The Risk of Not Investing in Employee Training</h4>
             <ul className="text-red-700 space-y-1">
               <li>• Declining performance due to skill gaps</li>
               <li>• Increased employee turnover from lack of development</li>
@@ -625,11 +648,11 @@ const CoreServices = () => {
           </div>
 
           <div className="text-center bg-gray-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-2">📈 Ready to Build a Stronger, Smarter Team?</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-2">Ready to Build a Stronger, Smarter Team?</h4>
             <p className="text-gray-700 mb-2">
               Let Openaccess Consulting design and deliver training solutions that empower your people to do their best work — every day.
             </p>
-            <p className="text-blue-600 font-semibold">📩 Contact us now to schedule a Free Training Needs Assessment.</p>
+            <p className="text-blue-600 font-semibold">Contact us now to schedule a Free Training Needs Assessment.</p>
           </div>
         </div>
       )
@@ -664,7 +687,7 @@ const CoreServices = () => {
           </p>
 
           <div className="bg-blue-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">🛂 Our Full Suite of Services Includes:</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">Our Full Suite of Services Includes:</h4>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-1" />
@@ -718,14 +741,14 @@ const CoreServices = () => {
           </div>
 
           <div className="border-l-4 border-red-500 bg-red-50 p-4 rounded">
-            <h4 className="text-lg font-semibold text-red-800 mb-2">🔍 Why It Matters</h4>
+            <h4 className="text-lg font-semibold text-red-800 mb-2">Why It Matters</h4>
             <p className="text-red-700 mb-2">Operating without proper immigration support can lead to:</p>
             <ul className="text-red-700 space-y-1">
-              <li>❌ Regulatory sanctions or government fines</li>
-              <li>❌ Delays in operations and project timelines</li>
-              <li>❌ Deportation of key staff</li>
-              <li>❌ Brand and reputational damage</li>
-              <li>❌ Revocation of business licenses</li>
+              <li>• Regulatory sanctions or government fines</li>
+              <li>• Delays in operations and project timelines</li>
+              <li>• Deportation of key staff</li>
+              <li>• Brand and reputational damage</li>
+              <li>• Revocation of business licenses</li>
             </ul>
             <p className="text-red-700 mt-3 font-medium">
               70% of immigration-related penalties in Nigeria stem from administrative oversight – we ensure that doesn't happen to you.
@@ -733,7 +756,7 @@ const CoreServices = () => {
           </div>
 
           <div className="bg-blue-600 text-white p-6 rounded-lg">
-            <h4 className="text-xl font-semibold mb-4">🧠 Why Choose Openaccess Consulting?</h4>
+            <h4 className="text-xl font-semibold mb-4">Why Choose Openaccess Consulting?</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-3">
                 <div className="flex items-start space-x-2">
@@ -780,11 +803,11 @@ const CoreServices = () => {
           </div>
 
           <div className="text-center bg-gray-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-2">🚀 Stay Focused on Growth – We'll Handle the Immigration Work</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-2">Stay Focused on Growth – We'll Handle the Immigration Work</h4>
             <p className="text-gray-700 mb-2">
               Let Openaccess Consulting be your strategic partner in immigration and expatriate workforce management.
             </p>
-            <p className="text-blue-600 font-semibold">📞 Book a consultation today to discuss your needs and ensure you're 100% compliant.</p>
+            <p className="text-blue-600 font-semibold">Book a consultation today to discuss your needs and ensure you're 100% compliant.</p>
           </div>
         </div>
       )
@@ -792,7 +815,7 @@ const CoreServices = () => {
     {
       icon: Building,
       title: 'Pre-Employment Tests',
-      description: 'Comprehensive business support across multiple functional areas.',
+      description: 'Validated assessments that measure skills, aptitude, personality and integrity before you hire.',
       categories: [
         'Cognitive Ability Test',
         'Personality Test',
@@ -844,7 +867,7 @@ const CoreServices = () => {
           </p>
 
           <div className="bg-blue-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">🔧 Our Human Resource Service Offerings Include:</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">Our Human Resource Service Offerings Include:</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
@@ -920,7 +943,7 @@ const CoreServices = () => {
           </div>
 
           <div className="bg-blue-600 text-white p-6 rounded-lg">
-            <h4 className="text-xl font-semibold mb-4">💼 Why Businesses Choose Openaccess</h4>
+            <h4 className="text-xl font-semibold mb-4">Why Businesses Choose Openaccess</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-3">
                 <div className="flex items-start space-x-2">
@@ -960,7 +983,7 @@ const CoreServices = () => {
           </div>
 
           <div className="text-center bg-gray-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-2">🚀 Let's Help You Build a Thriving Workforce</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-2">Let's Help You Build a Thriving Workforce</h4>
             <p className="text-gray-700 mb-2">
               Our integrated HR services ensure you are not just managing people — you are empowering your business through people.
             </p>
@@ -1011,10 +1034,10 @@ const CoreServices = () => {
           </p>
 
           <div className="bg-blue-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">🔍 Our Comprehensive Service Offerings Include:</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">Our Comprehensive Service Offerings Include:</h4>
             
             <div className="mb-6">
-              <h5 className="text-lg font-semibold text-blue-600 mb-3">🏢 Regulatory & Statutory Registrations</h5>
+              <h5 className="text-lg font-semibold text-blue-600 mb-3">Regulatory & Statutory Registrations</h5>
               <div className="space-y-2">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-4 w-4 text-blue-600 flex-shrink-0 mt-1" />
@@ -1052,7 +1075,7 @@ const CoreServices = () => {
             </div>
 
             <div>
-              <h5 className="text-lg font-semibold text-blue-600 mb-3">✅ Audit & Compliance Services</h5>
+              <h5 className="text-lg font-semibold text-blue-600 mb-3">Audit & Compliance Services</h5>
               <div className="space-y-2">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-4 w-4 text-blue-600 flex-shrink-0 mt-1" />
@@ -1091,11 +1114,11 @@ const CoreServices = () => {
           </div>
 
           <div className="border-l-4 border-red-500 bg-red-50 p-4 rounded">
-            <h4 className="text-lg font-semibold text-red-800 mb-2">💼 Why It Matters to Your Business</h4>
+            <h4 className="text-lg font-semibold text-red-800 mb-2">Why It Matters to Your Business</h4>
             <ul className="text-red-700 space-y-1">
-              <li>❗ Failure to comply can lead to permit revocation, contract disqualification, or legal sanctions.</li>
-              <li>💰 Non-compliance often results in lost business opportunities, financial penalties, and reputational damage.</li>
-              <li>📈 Companies with strong audit records and certifications are more likely to win tenders, form partnerships, and scale operations.</li>
+              <li>• Failure to comply can lead to permit revocation, contract disqualification, or legal sanctions.</li>
+              <li>• Non-compliance often results in lost business opportunities, financial penalties, and reputational damage.</li>
+              <li>• Companies with strong audit records and certifications are more likely to win tenders, form partnerships, and scale operations.</li>
             </ul>
             <p className="text-red-700 mt-3 font-medium">
               According to industry data: Up to 60% of contract bids are lost due to incomplete registrations or expired certifications.
@@ -1103,7 +1126,7 @@ const CoreServices = () => {
           </div>
 
           <div className="bg-blue-600 text-white p-6 rounded-lg">
-            <h4 className="text-xl font-semibold mb-4">🚀 Why Clients Choose Openaccess</h4>
+            <h4 className="text-xl font-semibold mb-4">Why Clients Choose Openaccess</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-3">
                 <div className="flex items-start space-x-2">
@@ -1137,7 +1160,7 @@ const CoreServices = () => {
           </div>
 
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">🛠️ Tailored Support for Every Industry</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">Tailored Support for Every Industry</h4>
             <p className="text-gray-700 mb-3">We serve businesses across sectors like:</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {['Oil & Gas', 'Engineering & Construction', 'Power & Energy', 'Manufacturing', 'Marine & Offshore', 'Telecoms & Infrastructure'].map((sector, index) => (
@@ -1152,7 +1175,7 @@ const CoreServices = () => {
           </div>
 
           <div className="text-center bg-gray-50 p-6 rounded-lg">
-            <h4 className="text-xl font-semibold text-gray-900 mb-2">📞 Partner with Openaccess Today</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-2">Partner with Openaccess Today</h4>
             <p className="text-gray-700">
               Let us help your organization secure all required registrations, pass all audits, and operate in full regulatory compliance — so you can focus on business growth and operational excellence.
             </p>
@@ -1202,14 +1225,25 @@ const CoreServices = () => {
 
       {/* Service Modal */}
       {selectedService && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          onClick={() => setSelectedService(null)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="service-modal-title"
+            className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="sticky top-0 bg-white border-b border-gray-200 p-6 flex justify-between items-center">
-              <h3 className="text-2xl font-bold text-gray-900">
+              <h3 id="service-modal-title" className="text-2xl font-bold text-gray-900">
                 {selectedService.title}
               </h3>
               <button
+                autoFocus
                 onClick={() => setSelectedService(null)}
+                aria-label="Close"
                 className="text-gray-400 hover:text-gray-600 transition-colors"
               >
                 <X className="h-6 w-6" />
@@ -1222,7 +1256,7 @@ const CoreServices = () => {
                 <div>
                   <p className="text-gray-600 mb-6">{selectedService.description}</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {selectedService.categories.map((category: string, idx: number) => (
+                    {selectedService.categories.map((category, idx) => (
                       <div key={idx} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
                         <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
                         <span className="text-gray-700">{category}</span>

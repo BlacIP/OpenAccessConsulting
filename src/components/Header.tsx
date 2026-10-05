@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
@@ -37,7 +37,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group" onClick={handleNavClick}>
             <img
-              src="/Logo/black.png"
+              src={`${import.meta.env.BASE_URL}Logo/black.png`}
               alt="OpenAccess Consulting"
               className="h-8 w-auto"
             />
@@ -66,6 +66,8 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
             className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
           >
             {isMenuOpen ? (
