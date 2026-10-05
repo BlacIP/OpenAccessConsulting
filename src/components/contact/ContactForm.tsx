@@ -126,12 +126,7 @@ const ContactForm = () => {
         <p className="mt-3 text-[15px] leading-relaxed text-slate-600">
           {FORMSPREE_ID
             ? 'Our team will get back to you to arrange your free consultation.'
-            : 'We’ve opened your email app with your message filled in. Press send to reach us.'}{' '}
-          Prefer to talk? Call{' '}
-          <a href={contact.phoneHref} className="font-semibold text-brand-600">
-            {contact.phoneDisplay}
-          </a>
-          .
+            : 'We’ve opened your email app with your message filled in. Press send to reach us.'}
         </p>
       </div>
     );

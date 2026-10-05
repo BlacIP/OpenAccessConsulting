@@ -1,4 +1,3 @@
-import { contact } from '../../content/site';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import Reveal from '../ui/Reveal';
@@ -16,7 +15,7 @@ const FinalCTA = ({
   title = 'Let’s talk about your team.',
   text = 'Book a free consultation and we’ll map out the right hiring, training or compliance support for your business.',
   primary = { label: 'Book a consultation', to: '/contact' },
-  secondary = { label: `Or call ${contact.phoneDisplay}`, href: contact.phoneHref },
+  secondary,
 }: FinalCTAProps) => (
   <section className="pb-20 lg:pb-28">
     <Container>
@@ -29,9 +28,11 @@ const FinalCTA = ({
               <Button to={primary.to} href={primary.href} variant="inverse" arrow>
                 {primary.label}
               </Button>
-              <Button to={secondary.to} href={secondary.href} variant="link-inverse">
-                {secondary.label}
-              </Button>
+              {secondary && (
+                <Button to={secondary.to} href={secondary.href} variant="link-inverse">
+                  {secondary.label}
+                </Button>
+              )}
             </div>
           </div>
         </div>

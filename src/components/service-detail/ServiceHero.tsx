@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import type { Pillar, Service } from '../../content/services';
 import type { ServiceDetail } from '../../content/serviceDetails';
-import { contact } from '../../content/site';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import HeroVisual from './HeroVisual';
@@ -43,11 +42,8 @@ const ServiceHero = ({ service, pillar, detail }: ServiceHeroProps) => (
         <p className="mt-6 max-w-xl text-lead text-slate-600">{detail.lead}</p>
         {detail.body && <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-slate-500">{detail.body}</p>}
 
-        <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <div className="mt-9">
           <Button to={`/contact?service=${service.slug}`}>Book a consultation</Button>
-          <Button href={contact.phoneHref} variant="link">
-            Call {contact.phoneDisplay}
-          </Button>
         </div>
       </div>
 

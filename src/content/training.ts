@@ -47,7 +47,7 @@ export const benefits = [
 export const trainingFaqs = [
   {
     q: 'How do I register?',
-    a: 'Click “Enroll now” to complete the registration form. For questions about registration, email info@openaccessconsult.com or call 0806 686 1023.',
+    a: 'Click “Enroll now” to complete the registration form. For questions about registration, email info@openaccessconsult.com.',
   },
   {
     q: 'Is the training virtual?',
