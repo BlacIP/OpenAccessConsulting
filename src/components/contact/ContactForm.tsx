@@ -232,7 +232,7 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-600 px-5 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-button bg-brand-600 px-5 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === 'submitting' && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
         {status === 'submitting' ? 'Sending…' : 'Send message'}

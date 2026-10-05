@@ -44,6 +44,10 @@ export default {
       maxWidth: {
         container: '1200px',
       },
+      borderRadius: {
+        // Every clickable button shares this radius
+        button: '4px',
+      },
       boxShadow: {
         elevated: '0 30px 60px -12px rgb(11 31 58 / 0.18), 0 18px 36px -18px rgb(0 0 0 / 0.2)',
         card: '0 1px 2px rgb(11 31 58 / 0.06), 0 4px 12px -4px rgb(11 31 58 / 0.08)',

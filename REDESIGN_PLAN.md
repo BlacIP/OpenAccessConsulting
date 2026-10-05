@@ -75,7 +75,7 @@ Stripe sells software. OpenAccess sells expertise and people. We should copy Str
 | **Logo strip directly under the hero** | Bigger client logos in one colour, all on transparent backgrounds, with no boxes | [Stripe hero + logos](https://mobbin.com/sites/sections/fc905901-fe5f-4813-bc2a-112fd8de0c21) |
 | **Numbers as design:** large figures with short captions | 13+ years · 500+ clients · 8 service lines · 36 states covered *(numbers to be confirmed)* | [Stripe stats row](https://mobbin.com/sites/sections/8dce9566-a3a9-4dae-a7ba-1e9109c0ffb5), [Stripe dark stats](https://mobbin.com/sites/sections/f841fbdf-2290-402a-a019-2993b0c5f070) |
 | **Thin vertical guide lines** framing the content column | A subtle 1px grid gives structure without boxing everything in cards | Visible in most Stripe sections above |
-| **Pill buttons + text links with a chevron (›)** | Primary: "Book a consultation" pill. Secondary: "Explore services ›" as a text link, not a second filled button. | All Stripe heroes |
+| **Compact buttons + text links with a chevron (›)** | Primary: "Book a consultation" button (4px radius). Secondary: "Explore services ›" as a text link, not a second filled button. | All Stripe heroes |
 | **Organised, dense footer** acting as a sitemap | Every service, training programme, company page and contact detail, with real links | [Stripe footer](https://mobbin.com/sites/sections/aedbe0cb-192a-4e87-bed2-307065b1e559) |
 
 ### What not to copy
@@ -127,7 +127,7 @@ Rule: use weight 600 for headings, not 700/800. Stripe's calm, confident feel co
 - **Container:** `max-w-[1200px] mx-auto px-5 sm:px-8`. Use one `<Container>` component and remove every `-mx-22` and `lg:px-28`.
 - **Section rhythm:** `py-20 lg:py-28`. Hero `pt-28 lg:pt-36`.
 - **Spacing scale:** 4/8px based (Tailwind default, used consistently).
-- **Radius:** buttons are fully rounded pills; cards `rounded-2xl` (16px); inputs `rounded-lg`.
+- **Radius:** all buttons 4px (`rounded-button` token, changed from pills on 6 Oct 2026); cards `rounded-2xl` (16px); inputs `rounded-lg`. Status badges and tags stay pill-shaped because they are not clickable.
 - **Shadow:** one elevated token for artifacts and floating cards (Stripe-style layered shadow: `0 30px 60px -12px rgb(11 31 58 / .18), 0 18px 36px -18px rgb(0 0 0 / .2)`). Regular cards get a 1px `line` border and **no shadow**.
 - **Breakpoints to QA:** 375 / 768 / 1024 / 1440.
 
@@ -149,7 +149,7 @@ Rule: use weight 600 for headings, not 700/800. Stripe's calm, confident feel co
 
 **Header**
 - Sticky. It's transparent over the hero, then turns white with `backdrop-blur` and a bottom border once the page scrolls.
-- Nav: **Services ▾** (mega-menu) · **Training** · **About** · **Contact**. Right side: "Book a consultation" (primary pill).
+- Nav: **Services ▾** (mega-menu) · **Training** · **About** · **Contact**. Right side: "Book a consultation" (primary button).
 - The mega-menu groups the 8 services into 3 pillars. Each item has a one-line description:
   - **Talent:** Recruitment · Pre-Employment Tests · Employee Verification
   - **Workforce:** Outsourcing · HR Services · Training & Development

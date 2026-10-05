@@ -89,7 +89,7 @@ const Header = () => {
     >
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-button focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-white"
       >
         Skip to content
       </a>
@@ -114,7 +114,7 @@ const Header = () => {
             onClick={onTriggerClick}
             onMouseEnter={onTriggerEnter}
             onMouseLeave={closeServicesSoon}
-            className={`inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-[15px] font-medium transition-colors ${
+            className={`inline-flex items-center gap-1 rounded-button px-3.5 py-2 text-[15px] font-medium transition-colors ${
               servicesOpen || pathname.startsWith('/services') ? 'text-ink' : 'text-slate-600 hover:text-ink'
             }`}
           >
@@ -131,7 +131,7 @@ const Header = () => {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `rounded-full px-3.5 py-2 text-[15px] font-medium transition-colors ${
+                `rounded-button px-3.5 py-2 text-[15px] font-medium transition-colors ${
                   isActive ? 'text-ink' : 'text-slate-600 hover:text-ink'
                 }`
               }
@@ -151,7 +151,7 @@ const Header = () => {
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
             aria-controls={MOBILE_MENU_ID}
-            className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full text-ink hover:bg-surface lg:hidden"
+            className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-button text-ink hover:bg-surface lg:hidden"
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>

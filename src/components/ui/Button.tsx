@@ -19,9 +19,9 @@ type ButtonProps = {
 };
 
 const variants: Record<Variant, string> = {
-  primary: 'rounded-full bg-brand-600 text-white hover:bg-brand-700',
-  secondary: 'rounded-full bg-white text-ink ring-1 ring-inset ring-line hover:ring-slate-300 hover:bg-surface',
-  inverse: 'rounded-full bg-white text-ink hover:bg-brand-50',
+  primary: 'rounded-button bg-brand-600 text-white hover:bg-brand-700',
+  secondary: 'rounded-button bg-white text-ink ring-1 ring-inset ring-line hover:ring-slate-300 hover:bg-surface',
+  inverse: 'rounded-button bg-white text-ink hover:bg-brand-50',
   link: 'text-brand-600 hover:text-brand-700',
   'link-inverse': 'text-white hover:text-white/80',
 };
