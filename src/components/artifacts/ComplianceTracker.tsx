@@ -29,7 +29,7 @@ const ComplianceTracker = ({ className = '' }: { className?: string }) => (
               <CheckCircle2 className="h-3.5 w-3.5" /> {item.status}
             </span>
           ) : (
-            <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-600">
+            <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700">
               <CalendarClock className="h-3.5 w-3.5" /> {item.status}
             </span>
           )}

@@ -1,6 +1,7 @@
 import { Clock3, Mail, MapPin, Phone } from 'lucide-react';
 import { clients, contact } from '../content/site';
-import { usePageTitle } from '../lib/usePageTitle';
+import { meta } from '../content/seo';
+import { usePageMeta } from '../lib/usePageMeta';
 import Container from '../components/ui/Container';
 import { Eyebrow } from '../components/ui/SectionHeading';
 import ContactForm from '../components/contact/ContactForm';
@@ -15,7 +16,7 @@ const MAP_SRC =
   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96800.76508513864!2d3.3946093528314774!3d6.5251174813143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b937a75c894ed%3A0x604cbad4c7f4679e!2sOpen%20Access%20Consulting%20Limited!5e0!3m2!1sen!2sng!4v1750202053306!5m2!1sen!2sng';
 
 const Contact = () => {
-  usePageTitle('Contact us');
+  usePageMeta(meta.contact);
 
   const lines = [
     { icon: Phone, label: 'Phone', value: contact.phoneDisplay, href: contact.phoneHref },

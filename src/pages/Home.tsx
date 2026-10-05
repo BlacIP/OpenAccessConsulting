@@ -1,3 +1,5 @@
+import { meta } from '../content/seo';
+import { usePageMeta } from '../lib/usePageMeta';
 import Hero from '../components/home/Hero';
 import LogoCloud from '../components/home/LogoCloud';
 import ServicesBento from '../components/home/ServicesBento';
@@ -8,17 +10,21 @@ import TrainingSpotlight from '../components/home/TrainingSpotlight';
 import FinalCTA from '../components/home/FinalCTA';
 
 // Client stories (testimonials + results) slot in after Industries once real quotes are approved.
-const Home = () => (
-  <>
-    <Hero />
-    <LogoCloud />
-    <ServicesBento />
-    <StatsBand />
-    <HowWeWork />
-    <Industries />
-    <TrainingSpotlight />
-    <FinalCTA />
-  </>
-);
+const Home = () => {
+  usePageMeta(meta.home);
+
+  return (
+    <>
+      <Hero />
+      <LogoCloud />
+      <ServicesBento />
+      <StatsBand />
+      <HowWeWork />
+      <Industries />
+      <TrainingSpotlight />
+      <FinalCTA />
+    </>
+  );
+};
 
 export default Home;

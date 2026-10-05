@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { pillars, servicesByPillar, serviceHref } from '../content/services';
-import { usePageTitle } from '../lib/usePageTitle';
+import { meta } from '../content/seo';
+import { usePageMeta } from '../lib/usePageMeta';
 import Container from '../components/ui/Container';
 import Button, { HoverArrow } from '../components/ui/Button';
 import { Eyebrow } from '../components/ui/SectionHeading';
@@ -10,7 +11,7 @@ import Industries from '../components/home/Industries';
 import FinalCTA from '../components/home/FinalCTA';
 
 const Services = () => {
-  usePageTitle('Services');
+  usePageMeta(meta.services);
 
   return (
     <>

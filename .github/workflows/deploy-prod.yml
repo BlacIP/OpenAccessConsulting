@@ -17,14 +17,16 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
+      # Builds and pre-renders every page, including 404.html (scripts/build.mjs)
       - name: Build for Production
         run: npm run build -- --mode production
+        env:
+          # Optional: set under Settings → Secrets and variables → Actions → Variables
+          VITE_FORMSPREE_ID: ${{ vars.VITE_FORMSPREE_ID }}
+          VITE_GA_ID: ${{ vars.VITE_GA_ID }}
         
-      - name: Add SPA fallback for GitHub Pages
-        run: cp dist/index.html dist/404.html
-
       - name: Deploy to GitHub Pages (Production)
         uses: peaceiris/actions-gh-pages@v4
         with:

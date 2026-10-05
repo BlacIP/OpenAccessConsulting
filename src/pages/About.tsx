@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle2 } from 'lucide-react';
 import { pillars, servicesByPillar } from '../content/services';
-import { usePageTitle } from '../lib/usePageTitle';
+import { meta } from '../content/seo';
+import { usePageMeta } from '../lib/usePageMeta';
 import Container from '../components/ui/Container';
 import Button, { HoverArrow } from '../components/ui/Button';
 import SectionHeading, { Eyebrow } from '../components/ui/SectionHeading';
@@ -40,7 +41,7 @@ const differentiators = [
 
 // Team section returns here once real names, roles and photos are supplied.
 const About = () => {
-  usePageTitle('About us');
+  usePageMeta(meta.about);
 
   return (
     <>
@@ -71,6 +72,8 @@ const About = () => {
               alt="OpenAccess consultants in a meeting"
               width={1600}
               height={1066}
+              // Largest element on the page: fetch it first (lowercase attribute for React 18)
+              {...{ fetchpriority: 'high' }}
               className="aspect-[4/3] w-full rounded-[2rem] object-cover"
             />
             <div aria-hidden="true" className="absolute -bottom-6 left-6 rounded-2xl bg-white px-5 py-4 shadow-elevated ring-1 ring-black/5">

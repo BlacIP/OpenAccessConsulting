@@ -1,7 +1,8 @@
 import { Navigate, useParams } from 'react-router-dom';
 import { getService, pillars } from '../content/services';
 import { serviceDetails } from '../content/serviceDetails';
-import { usePageTitle } from '../lib/usePageTitle';
+import { meta, servicePageMeta } from '../content/seo';
+import { usePageMeta } from '../lib/usePageMeta';
 import Container from '../components/ui/Container';
 import FAQList from '../components/ui/FAQList';
 import Reveal from '../components/ui/Reveal';
@@ -15,7 +16,7 @@ const ServiceDetailPage = () => {
   const { slug } = useParams();
   const service = getService(slug);
   const detail = slug ? serviceDetails[slug] : undefined;
-  usePageTitle(service?.title ?? 'Services');
+  usePageMeta(service && detail ? servicePageMeta(service.slug) : meta.services);
 
   if (!service || !detail) return <Navigate to="/services" replace />;
   const pillar = pillars.find((p) => p.id === service.pillar)!;

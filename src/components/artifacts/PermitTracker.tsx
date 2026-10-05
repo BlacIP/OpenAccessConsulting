@@ -30,7 +30,7 @@ const PermitTracker = ({ framed = false, className = '' }: PermitTrackerProps) =
               <CheckCircle2 className="h-3.5 w-3.5" /> Approved
             </span>
           ) : (
-            <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-600">
+            <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700">
               <Clock3 className="h-3.5 w-3.5" /> In review
             </span>
           )}

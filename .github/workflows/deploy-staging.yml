@@ -17,14 +17,15 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      # Ensure Vite builds with the correct base
+      # Builds and pre-renders every page (scripts/build.mjs)
       - name: Build for Staging
         run: npm run build -- --mode staging
-
-      - name: Add SPA fallback for GitHub Pages
-        run: cp dist/index.html dist/404.html
+        env:
+          # Optional: set under Settings → Secrets and variables → Actions → Variables
+          VITE_FORMSPREE_ID: ${{ vars.VITE_FORMSPREE_ID }}
+          VITE_GA_ID: ${{ vars.VITE_GA_ID }}
 
       - name: Deploy to GitHub Pages (Staging)
         uses: peaceiris/actions-gh-pages@v4

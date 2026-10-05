@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 import { CalendarDays, CheckCircle2, Clock3, Mail, MonitorPlay, Phone, UserRound } from 'lucide-react';
 import { contact, training, trainingEnrolUrl } from '../content/site';
 import { audience, benefits, learningTopics, modules, trainingFaqs } from '../content/training';
-import { usePageTitle } from '../lib/usePageTitle';
+import { meta } from '../content/seo';
+import { usePageMeta } from '../lib/usePageMeta';
 import { track } from '../lib/analytics';
 import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
@@ -30,7 +31,7 @@ const Block = ({ id, title, first = false, children }: { id: string; title: stri
 );
 
 const Training = () => {
-  usePageTitle('HR Training');
+  usePageMeta(meta.training);
 
   return (
     <>

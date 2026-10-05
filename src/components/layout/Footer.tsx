@@ -32,16 +32,16 @@ const Footer = () => (
           <ul className="mt-6 space-y-3 text-sm text-slate-600">
             <li>
               <a href={contact.phoneHref} className="inline-flex items-center gap-2.5 hover:text-ink">
-                <Phone className="h-4 w-4 text-slate-400" /> {contact.phoneDisplay}
+                <Phone className="h-4 w-4 text-slate-500" /> {contact.phoneDisplay}
               </a>
             </li>
             <li>
               <a href={`mailto:${contact.email}`} className="inline-flex items-center gap-2.5 hover:text-ink">
-                <Mail className="h-4 w-4 text-slate-400" /> {contact.email}
+                <Mail className="h-4 w-4 text-slate-500" /> {contact.email}
               </a>
             </li>
             <li className="flex gap-2.5">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-slate-500" />
               <span>
                 {contact.addressLines[0]},<br />
                 {contact.addressLines[1]}
@@ -81,7 +81,8 @@ const Footer = () => (
       </div>
 
       <div className="mt-14 flex flex-col gap-2 border-t border-line pt-8 text-sm text-slate-500 sm:flex-row sm:justify-between">
-        <p>&copy; {new Date().getFullYear()} OpenAccess Consulting Limited. All rights reserved.</p>
+        {/* Year comes from the build on first paint and may differ from the visitor's clock after New Year */}
+        <p suppressHydrationWarning>&copy; {new Date().getFullYear()} OpenAccess Consulting Limited. All rights reserved.</p>
         <p>Lagos, Nigeria</p>
       </div>
       {/* TODO: add LinkedIn / X / Instagram icons once the real profile URLs are available */}

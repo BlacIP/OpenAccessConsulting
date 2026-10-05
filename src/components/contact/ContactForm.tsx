@@ -1,4 +1,4 @@
-import { useRef, useState, type ChangeEvent, type FocusEvent, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type ChangeEvent, type FocusEvent, type FormEvent } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
 import { services } from '../../content/services';
@@ -39,9 +39,15 @@ const inputClass = (invalid: boolean) =>
 
 const ContactForm = () => {
   const [params] = useSearchParams();
-  const preselected = services.find((s) => s.slug === params.get('service'))?.title ?? (params.get('service') === 'training' ? 'HR Training' : '');
+  const [fields, setFields] = useState<Fields>({ name: '', email: '', company: '', phone: '', service: '', message: '' });
 
-  const [fields, setFields] = useState<Fields>({ name: '', email: '', company: '', phone: '', service: preselected, message: '' });
+  // Pre-select the service a visitor came from (?service=slug). Done after mount so the
+  // pre-rendered HTML, which has no query string, still matches on hydration.
+  const serviceParam = params.get('service');
+  useEffect(() => {
+    const title = services.find((s) => s.slug === serviceParam)?.title ?? (serviceParam === 'training' ? 'HR Training' : '');
+    if (title) setFields((f) => ({ ...f, service: title }));
+  }, [serviceParam]);
   const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({});
   const [status, setStatus] = useState<Status>('idle');
   const formRef = useRef<HTMLFormElement>(null);
@@ -134,7 +140,7 @@ const ContactForm = () => {
   const field = (name: FieldName, label: string, opts: { type?: string; autoComplete?: string; optional?: boolean } = {}) => (
     <div>
       <label htmlFor={name} className="block text-sm font-medium text-ink">
-        {label} {opts.optional && <span className="font-normal text-slate-400">(optional)</span>}
+        {label} {opts.optional && <span className="font-normal text-slate-500">(optional)</span>}
       </label>
       <input
         id={name}
@@ -183,7 +189,7 @@ const ContactForm = () => {
 
         <div className="sm:col-span-2">
           <label htmlFor="service" className="block text-sm font-medium text-ink">
-            What can we help with? <span className="font-normal text-slate-400">(optional)</span>
+            What can we help with? <span className="font-normal text-slate-500">(optional)</span>
           </label>
           <select id="service" name="service" value={fields.service} onChange={onChange} className={`mt-1.5 ${inputClass(false)}`}>
             <option value="">Select a service</option>

@@ -43,7 +43,7 @@ const VerificationReport = ({ className = '' }: { className?: string }) => {
             {c.done ? (
               <CheckCircle2 className="h-4 w-4 text-success" aria-label="Complete" />
             ) : (
-              <span className="inline-flex items-center gap-1 text-xs font-medium text-amber-600">
+              <span className="inline-flex items-center gap-1 text-xs font-medium text-amber-700">
                 <Clock3 className="h-3.5 w-3.5" /> In progress
               </span>
             )}
