@@ -11,7 +11,7 @@ import EnrollForTraining from './pages/EnrollForTraining';
 
 function App() {
   return (
-    <Router basename={import.meta.env.VITE_APP_BASE}>
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-white">
         <Header />
         <main>
