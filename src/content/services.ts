@@ -110,5 +110,6 @@ export const services: Service[] = [
 
 export const servicesByPillar = (id: PillarId) => services.filter((s) => s.pillar === id);
 
-// Service detail pages arrive in Phase 2 (/services/:slug); until then link to the overview.
-export const serviceHref = (service: Service) => `/services#${service.slug}`;
+export const serviceHref = (service: Service) => `/services/${service.slug}`;
+
+export const getService = (slug: string | undefined) => services.find((s) => s.slug === slug);

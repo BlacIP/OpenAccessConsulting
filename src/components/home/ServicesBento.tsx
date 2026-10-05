@@ -1,11 +1,11 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle2, Clock3 } from 'lucide-react';
 import { pillars, servicesByPillar, serviceHref, type PillarId } from '../../content/services';
 import Container from '../ui/Container';
 import Button, { HoverArrow } from '../ui/Button';
 import SectionHeading from '../ui/SectionHeading';
 import Reveal from '../ui/Reveal';
+import PermitTracker from '../artifacts/PermitTracker';
 
 // Illustrative visuals only
 
@@ -29,35 +29,6 @@ const HiringFunnel = () => {
           </div>
         </div>
       ))}
-    </div>
-  );
-};
-
-const PermitTracker = () => {
-  const steps = [
-    { label: 'Expatriate quota', done: true },
-    { label: 'STR visa', done: true },
-    { label: 'CERPAC', done: false },
-  ];
-  return (
-    <div>
-      <p className="text-xs font-medium text-slate-500">Expatriate permit · Plant Engineer</p>
-      <ul className="mt-3 space-y-2">
-        {steps.map((step) => (
-          <li key={step.label} className="flex items-center justify-between rounded-lg bg-white px-3 py-2.5 text-sm ring-1 ring-line">
-            <span className="font-medium text-ink">{step.label}</span>
-            {step.done ? (
-              <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700">
-                <CheckCircle2 className="h-3.5 w-3.5" /> Approved
-              </span>
-            ) : (
-              <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-600">
-                <Clock3 className="h-3.5 w-3.5" /> In review
-              </span>
-            )}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };
